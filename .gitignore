@@ -1,0 +1,5 @@
+*~
+/package
+/output
+.DS_Store
+plum-*.tar.gz
