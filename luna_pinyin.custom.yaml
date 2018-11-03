@@ -1,0 +1,187 @@
+patch:
+  # 标点及特殊表情...
+  punctuator/import_preset: symbols
+  recognizer/patterns/punct: "^/([a-z]+|[0-9])$"
+
+  # 載入朙月拼音擴充詞庫...
+  translator/dictionary: luna_pinyin.extended
+  speller/algebra/@before 0: xform/^([a-z])$/$1_/
+
+  # 在【朙月拼音】裏使用Emoji表情方案　
+  # 舊版 emoji 0.9.30 使用的 dict 爲 鼠鬚管上的 emoji.dict.yaml 文件
+  # emoji 表情可以直接在 小狼毫中使用，在鼠鬚管上 需主动安装 朙月拼音 bash rime-install luna-pinyin
+  schema/dependencies:
+    - emoji
+  # 是否直接在朙月拼音當中輸入表情
+  # abc_segmentor/extra_tags:
+  #   - reverse_lookup
+  reverse_lookup:
+    dictionary: emoji
+    enable_completion: false
+    prefix: "`"
+    tips: 〔表情〕
+
+  # 加載 easy_en 依賴...
+  schema/dependencies/@next: easy_en
+  # 載入翻譯英文的碼表翻譯器，取名爲 english
+  engine/translators/@next: table_translator@english
+  # english 翻譯器的設定項
+  english:
+    dictionary: easy_en
+    spelling_hints: 9
+    enable_completion: true
+    enable_sentence: false
+    initial_quality: -1
+
+
+  # 【朙月拼音】模糊音定製模板
+  speller/algebra:
+    - erase/^xx$/                      # 第一行保留
+
+    # 模糊音定義
+    # 需要哪組就刪去行首的 # 號，單雙向任選
+    #- derive/^([zcs])h/$1/             # zh, ch, sh => z, c, s
+    #- derive/^([zcs])([^h])/$1h$2/     # z, c, s => zh, ch, sh
+
+    #- derive/^n/l/                     # n => l
+    #- derive/^l/n/                     # l => n
+
+    # 這兩組一般是單向的
+    #- derive/^r/l/                     # r => l
+
+    #- derive/^ren/yin/                 # ren => yin, reng => ying
+    #- derive/^r/y/                     # r => y
+
+    # 下面 hu <=> f 這組寫法複雜一些，分情況討論
+    #- derive/^hu$/fu/                  # hu => fu
+    #- derive/^hong$/feng/              # hong => feng
+    #- derive/^hu([in])$/fe$1/          # hui => fei, hun => fen
+    #- derive/^hu([ao])/f$1/            # hua => fa, ...
+
+    #- derive/^fu$/hu/                  # fu => hu
+    #- derive/^feng$/hong/              # feng => hong
+    #- derive/^fe([in])$/hu$1/          # fei => hui, fen => hun
+    #- derive/^f([ao])/hu$1/            # fa => hua, ...
+
+    # 韻母部份
+    #- derive/^([bpmf])eng$/$1ong/      # meng = mong, ...
+    - derive/([ei])n$/$1ng/            # en => eng, in => ing
+    - derive/([ei])ng$/$1n/            # eng => en, ing => in
+
+    # 樣例足夠了，其他請自己總結……
+
+    # 反模糊音？
+    # 誰說方言沒有普通話精確、有模糊音，就能有反模糊音。
+    # 示例爲分尖團的中原官話：
+    #- derive/^ji$/zii/   # 在設計者安排下鳩佔鵲巢，尖音i只好雙寫了
+    #- derive/^qi$/cii/
+    #- derive/^xi$/sii/
+    #- derive/^ji/zi/
+    #- derive/^qi/ci/
+    #- derive/^xi/si/
+    #- derive/^ju/zv/
+    #- derive/^qu/cv/
+    #- derive/^xu/sv/
+    # 韻母部份，只能從大面上覆蓋
+    #- derive/^([bpm])o$/$1eh/          # bo => beh, ...
+    #- derive/(^|[dtnlgkhzcs]h?)e$/$1eh/  # ge => geh, se => sheh, ...
+    #- derive/^([gkh])uo$/$1ue/         # guo => gue, ...
+    #- derive/^([gkh])e$/$1uo/          # he => huo, ...
+    #- derive/([uv])e$/$1o/             # jue => juo, lve => lvo, ...
+    #- derive/^fei$/fi/                 # fei => fi
+    #- derive/^wei$/vi/                 # wei => vi
+    #- derive/^([nl])ei$/$1ui/          # nei => nui, lei => lui
+    #- derive/^([nlzcs])un$/$1vn/       # lun => lvn, zun => zvn, ...
+    #- derive/^([nlzcs])ong$/$1iong/    # long => liong, song => siong, ...
+    # 這個辦法雖從拼寫上做出了區分，然而受詞典制約，候選字仍是混的。
+    # 只有真正的方音輸入方案纔能做到！但「反模糊音」這個玩法快速而有效！
+
+    # 模糊音定義先於簡拼定義，方可令簡拼支持以上模糊音
+    - abbrev/^([a-z]).+$/$1/           # 簡拼（首字母）
+    - abbrev/^([zcs]h).+$/$1/          # 簡拼（zh, ch, sh）
+
+    # 以下是一組容錯拼寫，《漢語拼音》方案以前者爲正
+    - derive/^([nl])ve$/$1ue/          # nve = nue, lve = lue
+    - derive/^([jqxy])u/$1v/           # ju = jv,
+    - derive/un$/uen/                  # gun = guen,
+    - derive/ui$/uei/                  # gui = guei,
+    - derive/iu$/iou/                  # jiu = jiou,
+
+    # 自動糾正一些常見的按鍵錯誤
+    - derive/([aeiou])ng$/$1gn/        # dagn => dang
+    - derive/([dtngkhrzcs])o(u|ng)$/$1o/  # zho => zhong|zhou
+    - derive/ong$/on/                  # zhonguo => zhong guo
+    - derive/ao$/oa/                   # hoa => hao
+    - derive/([iu])a(o|ng?)$/a$1$2/    # tain => tian
+
+  # 分尖團後 v => ü 的改寫條件也要相應地擴充：
+  # 'translator/preedit_format':
+  #  - "xform/([nljqxyzcs])v/$1ü/"
+
+  # normalize regexp  2022-03-31
+    ############# a | e #############
+    # a. → .a
+    # ab => ba、 al => la、 am => ma | abn => ban、 alng => lang
+    - derive/^([blm])a/a$1/
+    # hau => hua
+    # - derive/(?!^)([u])a/a$1/
+
+    # .a → a.
+    # qina => qian、 huna => huan
+    - derive/(?!^)a([n])/$1a/
+
+    # e. → .e
+    # el => le、 em => me | ezn => zen | elng => leng
+    - derive/^([bflmrwz])e(.*)$/e$1$2/
+
+    # .e → e.
+    # fie => fei、 gie => gei、 kie => kei、 wie => wei、 zie => zei
+    # fne => fen、 gne => gen、 kne => ken、 wne => wen、 zne => zen
+    - derive/^([fgkwz])e([in])$/$1$2e/
+
+    ############### i ###############
+    # .ia → .ai
+    # kuia => kuai、 bia => bai、 cia => cai、 hia => hai
+    - derive/^(ku|[bchgkstwz])([a])i$/$1i$2/
+
+    # .ai → .ia | .ei → .ie
+    # jai => jia、 jei => jie、 xai => xia、 xei => xie
+    - derive/^([jx])i([ae])$/$1$2i/
+
+    # ^i.h$ → ^h.i$
+    # ia → ai、 iuh => hui、 iah => hai、 ieh => hei
+    - derive/^(h?)([aeqtux])i/i$2$1/
+
+    ############### o ###############
+    # o. → .o
+    # otng => tong、 ozu => zou
+    - derive/^([gtz])([o])/$2$1/
+
+    ############### ng ###############
+    # .gn → .ng | n.g → .ng
+    # dagn  => dang
+    - derive/(?!^)([aeiou])ng$/$1gn/
+    - derive/(?!^)([aeiou])ng$/n$1g/
+
+    ############### h ###############
+    # h. → .h
+    # hseng => sheng
+    - derive/^([cesz])h(?!$)/h$1/
+
+    # .h → h.
+    # eh => he、 ehn => hen | sah => sha、 zeh => zhe
+    # - derive/^([csz]?)h([aeu])/$1$2h/
+    - derive/^([csz]?)h([aeu])/$1$2h/
+
+    ############### u ###############
+    # u. → .u
+    # uz => zu、 uxn => xun
+    - derive/^([qtxz])u/u$1/
+
+    # .u → u.
+    # jeu => jue、 xnu => xun、 xeu => xue、 ynu => yun、 yeu => yue
+    - derive/(?!^)u([aen])/$1$2u/
+
+  # 新版 emoji，上面舊版爲 0.9.30 通過dict引入的，現在的時 opencc
+  # 只能放到最下面，不然其下面的配置不在生效
+  __include: emoji_suggestion:/patch

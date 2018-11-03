@@ -1,0 +1,9 @@
+distribution_code_name: Weasel
+distribution_name: "小狼毫"
+distribution_version: 0.11.1
+install_time: "Thu Nov  1 21:11:46 2018"
+installation_id: "lin"
+rime_version: 1.3.0
+
+# Rime 同步路徑...
+sync_dir: 'D:_Nutstore\Backups\RimeSync'

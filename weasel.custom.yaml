@@ -1,0 +1,40 @@
+﻿patch:
+  # Rime 界面樣式設置...
+  style/color_scheme: lin                   # 皮肤主题
+  style/display_tray_icon: true             # 托盘图标显示 新版 0.11.1 已默认跟随图标显示，无需这个
+  style/font_face: "YaHei Consolas Hybrid"  # 顯示字體  YaHei Consolas Hybrid   Source Han Sans Normal
+  style/font_point: 16                      # 顯示字號
+  style/horizontal: false                   # 候選窗横向顯示
+  style/inline_preedit: false               # 嵌入式編輯模式
+
+  # 應用程序的初始轉換狀態...
+  # 工程軟件
+  app_options/bridge.exe/ascii_mode: false
+  app_options/photoshop.exe/ascii_mode: true
+  app_options/illustrator.exe/ascii_mode: true
+  app_options/pxcook.exe/ascii_mode: true
+  app_options/acad.exe/ascii_mode: true
+  # 編譯器
+  app_options/devenv.exe/ascii_mode: true
+  app_options/sublime_text.exe/ascii_mode: false
+  # 系統工具
+  app_options/explorer.exe/ascii_mode: true
+  app_options/launchy.exe/ascii_mode: true
+  # 遊戲
+  app_options/winkawaks.exe/ascii_mode: true
+  app_options/plantsvszombies/ascii_mode: true
+  app_options/evoland.exe/ascii_mode: true
+
+  # 自定義皮膚配色方案...
+  preset_color_schemes/lin:
+    author: "林月潇"
+    name: "林月潇专版"
+    back_color: 0x333333
+    border_color: 0x333333
+    text_color: 0xdaaa43
+    hilited_text_color: 0xdaaa43
+    hilited_back_color: 0x333333
+    hilited_candidate_text_color: 0xbbbbbb
+    hilited_candidate_back_color: 0x333333
+    candidate_text_color: 0xffffff
+    comment_text_color: 0x333333

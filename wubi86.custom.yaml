@@ -1,0 +1,10 @@
+﻿patch:
+  # 标点及特殊表情
+  punctuator/import_preset: symbols
+  recognizer/patterns/punct: "^/([a-z]+|[0-9])$"
+
+  # 五笔回车清屏和分号、引号上屏幕二三候选词
+  key_binder/bindings:
+    - { when: composing, accept: Return, send: Escape }
+    - { when: has_menu, accept: semicolon, send: 2 }
+    - { when: has_menu, accept: apostrophe, send: 3 }

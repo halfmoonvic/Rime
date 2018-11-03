@@ -1,0 +1,10 @@
+distribution_code_name: Squirrel
+distribution_name: "鼠鬚管"
+distribution_version: 0.9.27
+install_time: "Fri Nov  2 17:51:24 2018"
+installation_id: "lin"
+rime_version: 1.3.0
+update_time: "Fri Nov  2 18:32:28 2018"
+
+# Rime 同步路徑...
+sync_dir: '/users/john/_Nutstore/Backups/RimeSync'
