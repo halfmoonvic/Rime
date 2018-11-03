@@ -1,0 +1,3 @@
+﻿patch:
+  'punctuator/import_preset': mysymbols
+  'recognizer/patterns/punct': "^/([a-z]+|[0-9])$"
