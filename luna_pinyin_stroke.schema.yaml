@@ -1,0 +1,67 @@
+# Rime schema
+# encoding: utf-8
+
+schema:
+  schema_id: luna_pinyin_stroke
+  name: 朙月拼音·筆劃輔助碼
+  version: "0.19"
+  author:
+    - 瑾昀 <cokunhui@gmail.com>
+  description: |
+    帶筆劃輔助碼的朙月拼音（不含詞組，需要的自己另加）。支持完整模式（如「木」muhspn）以及速成模式（取首尾筆劃，如「木」muhn）
+
+switches:
+  - name: ascii_mode
+    reset: 0
+    states: [ 中文, 西文 ]
+  - name: full_shape
+    states: [ 半角, 全角 ]
+  - name: simplification
+    states: [ 漢字, 汉字 ]
+
+engine:
+  processors:
+    - ascii_composer
+    - recognizer
+    - key_binder
+    - speller
+    - punctuator
+    - selector
+    - navigator
+    - express_editor
+  segmentors:
+    - ascii_segmentor
+    - matcher
+    - abc_segmentor
+    - punct_segmentor
+    - fallback_segmentor
+  translators:
+    - punct_translator
+    - script_translator
+  filters:
+    - simplifier
+    - uniquifier
+
+speller:
+  alphabet: zyxwvutsrqponmlkjihgfedcba
+  delimiter: " '"
+  algebra:
+    - derive/^(\w+);(\w)\w+(\w)$/$1$2$3/  # 拼音+筆劃速成（取首尾筆劃）
+    - derive/^(\w+);(\w+)$/$1$2/          # 拼音+筆劃
+
+translator:
+  dictionary: luna_pinyin_stroke
+  enable_user_dict: false
+  preedit_format:
+    - xform/([nl])v/$1ü/
+    - xform/([nl])ue/$1üe/
+    - xform/([jqxy])v/$1u/
+
+punctuator:
+  import_preset: default
+
+key_binder:
+  import_preset: default
+
+recognizer:
+  import_preset: default

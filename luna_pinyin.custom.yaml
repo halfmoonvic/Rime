@@ -1,0 +1,144 @@
+﻿patch:
+  # 标点及特殊表情...
+  punctuator/import_preset: symbols
+  recognizer/patterns/punct: "^/([a-z]+|[0-9])$"
+
+  # 載入朙月拼音擴充詞庫...
+  translator/dictionary: luna_pinyin.extended
+  speller/algebra/@before 0: xform/^([a-z])$/$1_/
+
+  # 在【朙月拼音】裏使用Emoji表情方案　
+  schema/dependencies:
+    - emoji
+  # 是否直接在朙月拼音當中輸入表情
+  # abc_segmentor/extra_tags:
+  #   - reverse_lookup
+  reverse_lookup:
+    dictionary: emoji
+    enable_completion: false
+    prefix: "`"
+    tips: 〔表情〕
+
+  # 加載 easy_en 依賴...
+  schema/dependencies/@next: easy_en
+  # 載入翻譯英文的碼表翻譯器，取名爲 english
+  engine/translators/@next: table_translator@english
+  # english 翻譯器的設定項
+  english:
+    dictionary: easy_en
+    spelling_hints: 9
+    enable_completion: true
+    enable_sentence: false
+    initial_quality: -1
+
+
+  # 【朙月拼音】模糊音定製模板
+  speller/algebra:
+    - erase/^xx$/                      # 第一行保留
+
+    # 模糊音定義
+    # 需要哪組就刪去行首的 # 號，單雙向任選
+    #- derive/^([zcs])h/$1/             # zh, ch, sh => z, c, s
+    #- derive/^([zcs])([^h])/$1h$2/     # z, c, s => zh, ch, sh
+
+    #- derive/^n/l/                     # n => l
+    #- derive/^l/n/                     # l => n
+
+    # 這兩組一般是單向的
+    #- derive/^r/l/                     # r => l
+
+    #- derive/^ren/yin/                 # ren => yin, reng => ying
+    #- derive/^r/y/                     # r => y
+
+    # 下面 hu <=> f 這組寫法複雜一些，分情況討論
+    #- derive/^hu$/fu/                  # hu => fu
+    #- derive/^hong$/feng/              # hong => feng
+    #- derive/^hu([in])$/fe$1/          # hui => fei, hun => fen
+    #- derive/^hu([ao])/f$1/            # hua => fa, ...
+
+    #- derive/^fu$/hu/                  # fu => hu
+    #- derive/^feng$/hong/              # feng => hong
+    #- derive/^fe([in])$/hu$1/          # fei => hui, fen => hun
+    #- derive/^f([ao])/hu$1/            # fa => hua, ...
+
+    # 韻母部份
+    #- derive/^([bpmf])eng$/$1ong/      # meng = mong, ...
+    - derive/([ei])n$/$1ng/            # en => eng, in => ing
+    - derive/([ei])ng$/$1n/            # eng => en, ing => in
+
+    # 樣例足夠了，其他請自己總結……
+
+    # 反模糊音？
+    # 誰說方言沒有普通話精確、有模糊音，就能有反模糊音。
+    # 示例爲分尖團的中原官話：
+    #- derive/^ji$/zii/   # 在設計者安排下鳩佔鵲巢，尖音i只好雙寫了
+    #- derive/^qi$/cii/
+    #- derive/^xi$/sii/
+    #- derive/^ji/zi/
+    #- derive/^qi/ci/
+    #- derive/^xi/si/
+    #- derive/^ju/zv/
+    #- derive/^qu/cv/
+    #- derive/^xu/sv/
+    # 韻母部份，只能從大面上覆蓋
+    #- derive/^([bpm])o$/$1eh/          # bo => beh, ...
+    #- derive/(^|[dtnlgkhzcs]h?)e$/$1eh/  # ge => geh, se => sheh, ...
+    #- derive/^([gkh])uo$/$1ue/         # guo => gue, ...
+    #- derive/^([gkh])e$/$1uo/          # he => huo, ...
+    #- derive/([uv])e$/$1o/             # jue => juo, lve => lvo, ...
+    #- derive/^fei$/fi/                 # fei => fi
+    #- derive/^wei$/vi/                 # wei => vi
+    #- derive/^([nl])ei$/$1ui/          # nei => nui, lei => lui
+    #- derive/^([nlzcs])un$/$1vn/       # lun => lvn, zun => zvn, ...
+    #- derive/^([nlzcs])ong$/$1iong/    # long => liong, song => siong, ...
+    # 這個辦法雖從拼寫上做出了區分，然而受詞典制約，候選字仍是混的。
+    # 只有真正的方音輸入方案纔能做到！但「反模糊音」這個玩法快速而有效！
+
+    # 模糊音定義先於簡拼定義，方可令簡拼支持以上模糊音
+    - abbrev/^([a-z]).+$/$1/           # 簡拼（首字母）
+    - abbrev/^([zcs]h).+$/$1/          # 簡拼（zh, ch, sh）
+
+    # 以下是一組容錯拼寫，《漢語拼音》方案以前者爲正
+    - derive/^([nl])ve$/$1ue/          # nve = nue, lve = lue
+    - derive/^([jqxy])u/$1v/           # ju = jv,
+    - derive/un$/uen/                  # gun = guen,
+    - derive/ui$/uei/                  # gui = guei,
+    - derive/iu$/iou/                  # jiu = jiou,
+
+    # 自動糾正一些常見的按鍵錯誤
+    - derive/([aeiou])ng$/$1gn/        # dagn => dang
+    - derive/([dtngkhrzcs])o(u|ng)$/$1o/  # zho => zhong|zhou
+    - derive/ong$/on/                  # zhonguo => zhong guo
+    - derive/ao$/oa/                   # hoa => hao
+    - derive/([iu])a(o|ng?)$/a$1$2/    # tain => tian
+
+  # 分尖團後 v => ü 的改寫條件也要相應地擴充：
+  #'translator/preedit_format':
+  #  - "xform/([nljqxyzcs])v/$1ü/"
+
+  # Author's key Error...
+    - derive/h([aeu])/$1h/             # sehn  => shen      eh => he
+    - derive/^([csz])h/h$1/            # hsi   => shi       hs => sh
+    - derive/^([bm])a$/a$1/            # ab   => ba
+
+    - derive/^([aeutx]?[h])i$/i$1/     # ia    => ai        ia => ai   ,   iah => hai
+    - derive/([a])n$/n$1/              # huna  => huan      na => an
+    - derive/([u])([a])/$2$1/          # gaui  => guai      au => ua
+    - derive/^([lm])e$/e$1/            # el    => le        el => le
+    - derive/^([wfb])en$/$1ne/         # wne   => wen       ne => en
+    - derive/^ba([n])/ab$1/            # abn   => ban       ab => ba
+    - derive/^([gz])([o])/$2$1/        # gong  => ogng   ozu => zou  ,   og => go   oz => zo
+    - derive/([n])g$/g$1/              # ng    => gn        ng => gn
+
+    - derive/^([bhzwktcfg])([ae])i/$1i$2/   # hia   => hai ,  wie => wei   ia => ai , ie => ei
+    - derive/^([jx])i([ae])/$1$2i/     # jai   => jia  ,  jei => jie   ei => ie , ai => ia
+    - derive/^([zr])en/$1ne/           # zne  => zen        ne => en
+    - derive/^([jyx])ue$/$1eu/         # jeu  => jue        eu => ue
+    - derive/^([tx])([io])/$2$1/       # itng => ting       it => ti
+    - derive/^zu([io])/uz$1/           # zui  => uzi        uz => zu
+
+    - derive/([aeiou])ng$/n$1g/        # dagn  => dang
+    - derive/h([aeiou])ng$/$1hng/      # zehng => zheng
+
+  # 专属打错字...
+
