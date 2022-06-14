@@ -1,5 +1,11 @@
 *~
-/package
-/output
 .DS_Store
 plum-*.tar.gz
+/trash
+
+/*.userdb
+/build
+/lua
+*.lua
+user.yaml
+installation.yaml
