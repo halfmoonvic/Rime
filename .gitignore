@@ -1,11 +1,11 @@
 *~
 .DS_Store
-plum-*.tar.gz
-/trash
 
 /*.userdb
+/sync
+
 /build
-/lua
-*.lua
-user.yaml
-installation.yaml
+/trash
+
+/user.yaml
+/installation.yaml
