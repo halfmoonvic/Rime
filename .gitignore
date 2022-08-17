@@ -1,5 +1,17 @@
+# https://github.com/rime/home/wiki/SharedData
+# https://github.com/rime/home/wiki/UserData
+
 *~
 /package
 /output
 .DS_Store
 plum-*.tar.gz
+
+*.lua
+/lua
+/build
+/trash
+/*.userdb
+
+user.yaml
+installation.yaml
