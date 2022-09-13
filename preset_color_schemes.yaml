@@ -1,0 +1,49 @@
+patch:
+  preset_color_schemes:
+    light:
+      name: "light"
+
+      border_width: 6
+      border_height: 6
+      corner_radius: 6
+      hilited_corner_radius: 0 # 高亮圆角
+      candidate_format: "%c.\u2005%@\u2005" # %c 指编号 %@ 指候选词
+
+      back_color: 0xeeeeee
+      border_color: 0xeeeeee
+
+      text_color: 0x808080
+      hilited_text_color: 0x000000
+      hilited_back_color: 0xeeeeee
+
+      candidate_text_color: 0x000000
+      hilited_candidate_text_color: 0xc98915
+      hilited_candidate_back_color: 0xeeeeee
+
+      label_color: 0x888888
+      hilited_candidate_label_color: 0xa0c98915
+      comment_text_color: 0x808080
+
+    dark:
+      name: "dark"
+
+      border_width: 6
+      border_height: 6
+      corner_radius: 6
+      hilited_corner_radius: 0 # 高亮圆角
+      candidate_format: "%c.\u2005%@\u2005" # %c 指编号 %@ 指候选词
+
+      back_color: 0x252320
+      border_color: 0x252320
+
+      text_color: 0x808080
+      hilited_text_color: 0xdedddd
+      hilited_back_color: 0x252320
+
+      candidate_text_color: 0xdedddd
+      hilited_candidate_text_color: 0xdaaa43
+      hilited_candidate_back_color: 0x252320
+
+      label_color: 0x888888
+      hilited_candidate_label_color: 0xdaaa43
+      comment_text_color: 0x808080

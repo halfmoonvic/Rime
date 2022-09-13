@@ -1,0 +1,26 @@
+# encoding: utf-8
+
+# 欲启用反查，需将下行配置写入相应的 custom 定制方案文档中
+# reverse_lookup: { __include: reverse_lookup:/emoji }
+# reverse_lookup: { __include: reverse_lookup:/stroke }
+# 是否直接在当前输入方案中直接輸入表情
+# abc_segmentor/extra_tags: [reverse_lookup]
+
+# https://gist.github.com/lotem/3705586
+# 在【朙月拼音】裏使用Emoji表情
+# 這份配置已過時，新的emoji實現代碼在 https://github.com/rime/rime-emoji
+emoji:
+  dictionary: emoji
+  enable_completion: false
+  prefix: "`"
+  tips: 〔表情〕
+
+# https://github.com/rime-aca/rime-luna-pinyin-stroke
+stroke:
+  dictionary: stroke
+  enable_completion: true
+  preedit_format:
+    - "xlit/hspnz/一丨丿丶乙/"
+  prefix: "`"
+  suffix: "'"
+  tips: "〔筆畫〕"

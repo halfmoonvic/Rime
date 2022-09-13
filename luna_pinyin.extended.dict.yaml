@@ -1,0 +1,69 @@
+# Rime dictionary
+# encoding: utf-8
+#
+# Luna Pinyin Extended Dictionary(Basic)  - 明月拼音擴充詞庫（基本）
+#
+#   瑾昀 <cokunhui@gmail.com>
+#
+# Thanks to the following works:
+#
+# * 拼音加加論壇beckyer製作的繁體詞庫
+#   http://bbs.jjol.cn/showthread.php?t=6758
+#
+# * 小麥注音輸入法詞庫
+#   https://github.com/mjhsieh/McBopomofo/tree/master/Source/Data
+#
+# * 新酷音共享詞庫
+#   Google搜尋獲得，由臺灣网友整理
+#
+# * 詞庫网
+#   http://baseterm.com/
+#
+# * 敎育部詞頻統計表
+#   http://www.edu.tw/files/site_content/m0001/pin/biau2.htm?open
+#
+# * 維基百科
+#   http://www.wikipedia.org/
+#
+# 部署位置：
+# ~/.config/ibus/rime  (Linux)
+# ~/Library/Rime  (Mac OS)
+# %APPDATA%\Rime  (Windows)
+#
+# 於重新部署後生效
+#
+
+---
+name: luna_pinyin.extended
+version: "2014.09.07"
+sort: by_weight
+use_preset_vocabulary: true
+#此處爲明月拼音擴充詞庫（基本）默認鏈接載入的詞庫，有朙月拼音官方詞庫、明月拼音擴充詞庫（漢語大詞典）、明月拼音擴充詞庫（詩詞）、明月拼音擴充詞庫（含西文的詞彙）。如果不需要加載某个詞庫請將其用「#」註釋掉。
+#雙拼不支持 luna_pinyin.cn_en 詞庫，請用戶手動禁用。
+import_tables:
+  - luna_pinyin                            # 系统自带词库，无意外必须开启。
+  - dict/luna_pinyin.anime                 # 动漫
+  - dict/luna_pinyin.basis                 # 基础词库
+  - dict/luna_pinyin.chat                  # 聊天
+  - dict/luna_pinyin.classical             # 成语
+  - dict/luna_pinyin.cn_en                 # 中英混合词条
+  - dict/luna_pinyin.computer              # 电脑词汇
+  - dict/luna_pinyin.daily                 # 生活
+  - dict/luna_pinyin.diet                  # 饮食
+  # - dict/luna_pinyin.emoji                 # emoji
+  - dict/luna_pinyin.game                  # 游戏
+  # - dict/luna_pinyin.gd                    # 粤语词汇
+  - dict/luna_pinyin.hanyu                 # 汉语大词典
+  - dict/luna_pinyin.history               # 历史
+  - dict/luna_pinyin.idiom                 # 俗语
+  - dict/luna_pinyin.lol                   # 英雄联盟
+  - dict/luna_pinyin.moba                  # Moba游戏用词
+  - dict/luna_pinyin.movie                 # 电影
+  - dict/luna_pinyin.music                 # 音乐
+  - dict/luna_pinyin.name                  # 人名
+  - dict/luna_pinyin.net                   # 网络流行词
+  # - dict/luna_pinyin.phrase                # 颜文字, integrated in the rime-emoji
+  - dict/luna_pinyin.poetry                # 常用诗词
+  - dict/luna_pinyin.practical             # 基本词库
+  - dict/luna_pinyin.website               # 网站大全
+...

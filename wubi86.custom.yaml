@@ -1,0 +1,17 @@
+﻿patch:
+  # https://github.com/rime/rime-emoji
+  __include: emoji_suggestion:/patch
+
+  __include: easy_en:/patch
+  # 是否开启 easy_en 造句功能
+  easy_en/enable_sentence: false
+
+  # 标点及特殊表情
+  punctuator/import_preset: symbols
+  recognizer/patterns/punct: "^/([a-z]+|[0-9])$"
+
+  # 五笔回车清屏和分号、引号上屏幕二三候选词
+  key_binder/bindings:
+    - { when: composing, accept: Return, send: Escape }
+    - { when: has_menu, accept: semicolon, send: 2 }
+    - { when: has_menu, accept: apostrophe, send: 3 }

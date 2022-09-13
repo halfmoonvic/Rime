@@ -1,0 +1,5 @@
+var:
+  option:
+    full_shape: false
+    simplification: true
+  previously_selected_schema: luna_pinyin

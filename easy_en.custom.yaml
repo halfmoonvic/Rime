@@ -1,0 +1,23 @@
+# https://github.com/BlindingDark/rime-easy-en
+
+# 在 luna_pinyin.custom.yaml 中，直接寫入以下代碼亦可啓用 easy_en
+# schema/dependencies/@next: easy_en
+# # 載入翻譯英文的碼表翻譯器，取名爲 english
+# engine/translators/@next: table_translator@english
+# # english 翻譯器的設定項
+# english:
+#   dictionary: easy_en
+#   spelling_hints: 9
+#   enable_completion: true
+#   enable_sentence: false
+#   initial_quality: -1
+
+patch:
+  # 未使用连续输入增强功能时，英文模式下出现带有☯图案的无意义单词
+  translator/enable_sentence: false
+
+  # 连续输入增强功能太卡/如何关闭连续输入增强的分词功能
+  easy_en/split_sentence: false
+
+  # 不使用连续输入增强
+  engine/filters: [uniquifier]
