@@ -104,7 +104,6 @@ patch:
     - derive/ao$/oa/                   # hoa => hao
     - derive/([iu])a(o|ng?)$/a$1$2/    # tain => tian
 
-    # normalize regexp  2022-03-31
     ############# a | e #############
     # a. → .a
     # ab => ba、 al => la、 am => ma | abn => ban、 alng => lang
@@ -118,7 +117,7 @@ patch:
 
     # e. → .e
     # el => le、 em => me | ezn => zen | elng => leng
-    - derive/^([bflmrwz])e(.*)$/e$1$2/
+    - derive/^([bfklmrwz])e(.*)$/e$1$2/
 
     # .e → e.
     # fie => fei、 gie => gei、 kie => kei、 wie => wei、 zie => zei
