@@ -14,7 +14,7 @@
         "dicts": [
           {
             "type": "text",
-            "file": "emoji_phrase.txt"
+            "file": "kaomoji.txt"
           },
           {
             "type": "text",
