@@ -132,7 +132,7 @@ patch:
 
     # .ai → .ia | .ei → .ie
     # jai => jia、 jei => jie、 xai => xia、 xei => xie
-    - derive/^([jx])i([ae])$/$1$2i/
+    - derive/^([jqx])i([ae])$/$1$2i/
 
     # ^i.h$ → ^h.i$
     # ia → ai、 iuh => hui、 iah => hai、 ieh => hei
