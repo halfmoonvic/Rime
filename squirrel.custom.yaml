@@ -18,10 +18,9 @@ patch:
   # 1. ll /Applications # to show Application_Name
   # 2. osascript -e 'id of app "Application_Name"'
 
-  # app_options/com.adobe.Photoshop/ascii_mode: true
-  # app_options/com.fancynode.pxcook/ascii_mode: true
-  # app_options/com.microsoft.VSCode/ascii_mode: false
+  app_options/com.microsoft.VSCode/ascii_mode: false
+  app_options/com.apple.finder/ascii_mode: true
   app_options/com.googlecode.iterm2/ascii_mode: true
   app_options/com.apple.Terminal/ascii_mode: true
-  app_options/com.apple.finder/ascii_mode: true
+  # app_options/com.adobe.Photoshop/ascii_mode: true
   # app_options/com.google.Chrome/ascii_mode: true
