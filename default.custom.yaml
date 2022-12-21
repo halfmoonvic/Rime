@@ -78,5 +78,6 @@ patch:
     - { when: always, accept: Shift+space, toggle: ascii_mode }
     - { when: always, accept: Control+comma, toggle: full_shape }
     - { when: always, accept: Control+period, toggle: ascii_punct }
-    - { when: always, accept: Control+slash, toggle: simplification }
+    # conflict with ide comment key
+    # - { when: always, accept: Control+slash, toggle: simplification }
     - { when: always, accept: Control+backslash, toggle: extended_charset }
