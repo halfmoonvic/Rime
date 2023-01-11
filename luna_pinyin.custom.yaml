@@ -8,7 +8,7 @@ patch:
   __include: easy_en:/patch
   easy_en/enable_sentence: false
 
-  # 标点及特殊表情
+  # import punctuator and special symbols
   punctuator/import_preset: symbols
 
   # to recognize symbols
@@ -16,17 +16,17 @@ patch:
   # to recognize number.lua
   recognizer/patterns/number: '^/[0-9]+$'
 
-  # 載入朙月拼音擴充詞庫
-  translator/dictionary: luna_pinyin.extended
-  speller/algebra/@before 0: xform/^([a-z])$/$1_/
-
   # lua
   "engine/translators/@90": lua_translator@time_translator
   "engine/translators/@91": lua_translator@number_translator
   "engine/translators/@92": lua_translator@thousand_translator
 
-  # 【朙月拼音】模糊音定製模板
+  # load luna_pinyin dict
+  translator/dictionary: luna_pinyin.extended
+  speller/algebra/@before 0: xform/^([a-z])$/$1_/
+
   # https://gist.github.com/lotem/2320943
+  # 【朙月拼音】模糊音定製模板
 
   # 分尖團後 v => ü 的改寫條件也要相應地擴充：
   # translator/preedit_format:

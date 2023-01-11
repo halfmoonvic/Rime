@@ -1,14 +1,25 @@
-﻿patch:
+# https://github.com/rime/rime-wubi
+
+patch:
   # https://github.com/rime/rime-emoji
   __include: emoji_suggestion:/patch
 
+  # https://github.com/BlindingDark/rime-easy-en
   __include: easy_en:/patch
-  # 是否开启 easy_en 造句功能
   easy_en/enable_sentence: false
 
-  # 标点及特殊表情
+  # import punctuator and special symbols
   punctuator/import_preset: symbols
-  recognizer/patterns/punct: "^/([a-z]+|[0-9])$"
+
+  # to recognize symbols
+  recognizer/patterns/punct: "^/([0-9]0?|[A-Za-z]+)$"
+  # to recognize number.lua
+  recognizer/patterns/number: '^/[0-9]+$'
+
+  # lua
+  "engine/translators/@90": lua_translator@time_translator
+  "engine/translators/@91": lua_translator@number_translator
+  "engine/translators/@92": lua_translator@thousand_translator
 
   # 五笔回车清屏和分号、引号上屏幕二三候选词
   key_binder/bindings:
