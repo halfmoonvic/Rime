@@ -1,8 +1,9 @@
 *~
 .DS_Store
 
-/*.userdb
 /sync
+/*.userdb
+/*.userdb.old
 
 /build
 /trash
