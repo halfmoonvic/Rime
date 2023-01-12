@@ -1,32 +1,47 @@
+symbols:
+  "/wz":
+    [
+      "site:zhihu.com",
+      "site:github.com",
+      "site:tieba.baidu.com",
+      "site:wikipedia.org",
+      "site:developer.mozilla.org",
+      "-zhuanlan site:zhihu.com",
+      "site:daily.zhihu.com",
+    ]
+  "/zz": ["→_→", "←_←"]
+
 patch:
   punctuator/full_shape:
-    " ": {commit: " "}
-    "!": {commit: "！"}
-    "\"": {pair: ["“", "”"]}
+    __include: symbols
+
+    " ": { commit: " " }
+    "!": { commit: "！" }
+    '"': { pair: ["“", "”"] }
     "#": "＃"
     "$": "￥"
     "%": "％"
     "&": "＆"
-    "'": {pair: ["‘", "’"]}
+    "'": { pair: ["‘", "’"] }
     "(": "（"
     ")": "）"
     "*": ["*", "＊", "·", "・"]
     "+": "＋"
-    ",": {commit: "，"}
+    ",": { commit: "，" }
     "-": "－"
-    ".": {commit: "。"}
+    ".": { commit: "。" }
     "/": ["／", "÷"]
-    ":": {commit: "："}
-    ";": {commit: "；"}
+    ":": { commit: "：" }
+    ";": { commit: "；" }
     "<": "《"
     "=": "＝"
     ">": "》"
-    "?": {commit: "？"}
+    "?": { commit: "？" }
     "@": "@"
     "[": "【"
     "\\": "、"
-    "]":  "】"
-    "^": {commit: "……"}
+    "]": "】"
+    "^": { commit: "……" }
     _: "——"
     "`": "｀"
     "{": "｛"
@@ -34,43 +49,39 @@ patch:
     "}": "｝"
     "~": "～"
 
-    "/wz": ["site:zhihu.com", "site:github.com", "site:wikipedia.org", "site:developer.mozilla.org", "-zhuanlan site:zhihu.com", "site:tieba.baidu.com", "site:daily.zhihu.com"]
-    "/zz": ["→_→", "←_←"]
-
   punctuator/half_shape:
-    " ": {commit: " "}
-    "!": {commit: "！"}
-    "\"": {pair: ["“", "”"]}
+    __include: symbols
+
+    " ": { commit: " " }
+    "!": { commit: "！" }
+    '"': { pair: ["“", "”"] }
     "#": "＃"
     "$": "￥"
     "%": "％"
     "&": "＆"
-    "'": {pair: ["‘", "’"]}
+    "'": { pair: ["‘", "’"] }
     "(": "（"
     ")": "）"
     "*": ["*", "＊", "·", "・"]
     "+": "＋"
-    ",": {commit: "，"}
+    ",": { commit: "，" }
     "-": "－"
-    ".": {commit: "。"}
+    ".": { commit: "。" }
     "/": ["、", "/", "／", "÷"]
-    ":": {commit: "："}
-    ";": {commit: "；"}
+    ":": { commit: "：" }
+    ";": { commit: "；" }
     "<": "《"
     "=": "＝"
     ">": "》"
-    "?": {commit: "？"}
+    "?": { commit: "？" }
     "@": "@"
     "[": "「"
     "\\": "、"
-    "]":  "」"
-    "^": {commit: "……"}
+    "]": "」"
+    "^": { commit: "……" }
     _: "——"
     "`": "｀"
     "{": "｛"
     "|": "|"
     "}": "｝"
     "~": "～"
-
-    "/wz": ["site:zhihu.com", "site:github.com", "site:wikipedia.org", "site:developer.mozilla.org", "-zhuanlan site:zhihu.com", "site:tieba.baidu.com", "site:daily.zhihu.com"]
-    "/zz": ["→_→", "←_←"]
