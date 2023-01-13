@@ -1,29 +1,25 @@
 patch:
   __include: preset_color_schemes:/
 
-  # Rime 界面樣式設置
+  # rime style
   style/color_scheme: dark
 
   style/font_point: 14
   style/font_face: "YaHei Consolas Hybrid"
 
-  # 托盘图标显示 新版 0.11.1 已默认跟随图标显示
   style/display_tray_icon: false
   style/horizontal: false
   style/inline_preedit: false
 
-  # 應用程序的初始轉換狀態
-  # 記憶軟件切換狀態，只在關閉應用程序時，恢復至所設置的狀態
-  # app_options/bridge.exe/ascii_mode: false
-  # app_options/photoshop.exe/ascii_mode: true
-  # app_options/illustrator.exe/ascii_mode: true
-  # app_options/pxcook.exe/ascii_mode: true
-  # app_options/acad.exe/ascii_mode: true
-  # app_options/devenv.exe/ascii_mode: true
-  # app_options/sublime_text.exe/ascii_mode: true
+  # disable chinese input in specific programs
+  app_options/conemu.exe/ascii_mode: true
+  app_options/conemu64.exe/ascii_mode: true
+  app_options/conemuc64.exe/ascii_mode: true
+  app_options/conhost.exe/ascii_mode: true
   app_options/explorer.exe/ascii_mode: true
   app_options/launchy.exe/ascii_mode: true
-  # app_options/chrome.exe/ascii_mode: true
-  # app_options/winkawaks.exe/ascii_mode: true
-  # app_options/plantsvszombies/ascii_mode: true
-  # app_options/evoland.exe/ascii_mode: true
+  app_options/photoshop.exe/ascii_mode: true
+  app_options/winkawaks.exe/ascii_mode: true
+  app_options/code.exe/ascii_mode: false
+  app_options/sublime_text.exe/ascii_mode: false
+  app_options/chrome.exe/ascii_mode: false
