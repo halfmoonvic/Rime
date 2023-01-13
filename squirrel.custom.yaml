@@ -1,5 +1,5 @@
 patch:
-  __include: preset_color_schemes:/patch
+  __include: preset_color_schemes:/
 
   # Rime 界面樣式設置
   # optional: define both light and dark color schemes to match system appearance
