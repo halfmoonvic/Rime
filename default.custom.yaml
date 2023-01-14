@@ -1,13 +1,14 @@
 patch:
-  # 每頁候選數
+  # candidates per page
   menu/page_size: 5
 
-  # 呼出方案選單
+  # call out IME menu
   switcher/hotkeys:
     - Control+grave
 
-  # 中西文切換鍵
-  ascii_composer/good_old_caps_lock: true
+  # switch between Chinese and English
+  # https://gist.github.com/lotem/2981316
+  ascii_composer/good_old_caps_lock: false
   ascii_composer/switch_key:
     Caps_Lock: commit_code
     Shift_L: commit_code
@@ -15,14 +16,16 @@ patch:
     Control_L: noop
     Control_R: noop
 
-  # 定義預設的拼音輸入方案
-  # rime 仅内置朙月拼音输入方案，欲使用其它输入方案，需主动添加 https://github.com/rime/plum
+  # input schema repository, https://github.com/rime/plum
   schema_list:
     - schema: luna_pinyin
     - schema: wubi86
     - schema: easy_en
 
-  # 快捷鍵
+  # shortcut key
+  # import the following definition to enable in your schema:
+  # key_binder/import_preset: default
+  # https://github.com/rime/rime-prelude/blob/master/key_bindings.yaml
   key_binder/bindings:
     # emacs_editing
     - { when: composing, accept: Control+p, send: Up }
@@ -78,6 +81,6 @@ patch:
     - { when: always, accept: Shift+space, toggle: ascii_mode }
     - { when: always, accept: Control+comma, toggle: full_shape }
     - { when: always, accept: Control+period, toggle: ascii_punct }
-    # conflict with ide comment key
+    # conflicts with editor comment shortcuts
     # - { when: always, accept: Control+slash, toggle: simplification }
     - { when: always, accept: Control+backslash, toggle: extended_charset }
