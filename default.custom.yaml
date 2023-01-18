@@ -20,6 +20,7 @@ patch:
   schema_list:
     - schema: luna_pinyin
     - schema: wubi86
+    - schema: japanese
     - schema: easy_en
 
   # shortcut key
