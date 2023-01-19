@@ -14,8 +14,8 @@ patch:
   style/inline_preedit: false
 
   # disable chinese input in specific programs
-  # 1. get Application_Name: ll /Applications
-  # 2. get Bundle Identifier: osascript -e 'id of app "Application_Name"'
+  # Application_Name: ll /Applications
+  # Bundle_Identifier: osascript -e 'id of app "Application_Name"'
   app_options/com.apple.finder/ascii_mode: true
   app_options/com.apple.Terminal/ascii_mode: true
   app_options/com.googlecode.iterm2/ascii_mode: true

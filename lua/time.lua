@@ -24,25 +24,28 @@ translator 的输出是若干候选项。
 --]]
 
 local function translator(input, seg)
-  local weakTab = { '日', '一', '二', '三', '四', '五', '六' }
+  local weakTabEN = { 'Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday' }
+  local weakTabCN = { '日', '一', '二', '三', '四', '五', '六' }
+  local weekEN = weakTabEN[tonumber(os.date("%w") + 1)]
+  local weekCN = weakTabCN[tonumber(os.date("%w") + 1)]
 
-  if (input == "time") then
+  if (input == "time" or input == "sj") then
     local time = os.date("%H:%M:%S")
-    local fullTime = os.date("%Y-%m-%d") .. " " .. '星期' .. weakTab[tonumber(os.date("%w") + 1)] .. " " .. time
-    yield(Candidate("time", seg.start, seg._end, time, " 时间"))
-    yield(Candidate("time", seg.start, seg._end, fullTime, " 时间"))
+    local fullTimeEN = os.date("%Y-%m-%d") .. " " .. time .. " " .. weekEN
+    local fullTimeCN = os.date("%Y-%m-%d") .. " " .. time .. " " .. '星期' .. weekCN
+    yield(Candidate("time", seg.start, seg._end, time, " Time"))
+    yield(Candidate("time", seg.start, seg._end, fullTimeEN, " Time"))
+    yield(Candidate("time", seg.start, seg._end, fullTimeCN, " Chinese"))
   end
 
   if (input == "date") then
-    yield(Candidate("date", seg.start, seg._end, os.date("%Y 年 %m 月 %d 日"), "日期"))
-    yield(Candidate("date", seg.start, seg._end, os.date("%Y-%m-%d"), "日期"))
+    yield(Candidate("date", seg.start, seg._end, os.date("%Y-%m-%d"), "Date"))
+    yield(Candidate("date", seg.start, seg._end, os.date("%Y年%m月%d日"), "Chinese"))
   end
 
   if (input == "week") then
-    local week = weakTab[tonumber(os.date("%w") + 1)]
-    yield(Candidate("week", seg.start, seg._end, "周" .. week, ""))
-    yield(Candidate("week", seg.start, seg._end, "星期" .. week, ""))
-    yield(Candidate("week", seg.start, seg._end, "礼拜" .. week, ""))
+    yield(Candidate("week", seg.start, seg._end, weekEN, "Week"))
+    yield(Candidate("week", seg.start, seg._end, "星期" .. weekCN, "Chinese"))
   end
 end
 

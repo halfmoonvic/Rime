@@ -6,7 +6,7 @@
 
 ## 1.1 Rime Setting 界面
 
-![Rime Setting UI](/Users/john/Library/Rime/images/image-20220818113438900.png)
+![Rime Setting UI](./assets/image-20220818113438900.png)
 
 #### 1.1.1、 Deploy「部署」
 
@@ -17,6 +17,7 @@
 后面讲
 
 #### 1.1.3、 Settings 「打开用户设置文件夹」
+
 不同平台下用户配置文件夹路径如下：
 
 【中州韻】 ibus-rime → Linux
@@ -33,22 +34,22 @@ Fcitx: ~/.config/fcitx/rime
 
 ## 1.2 GUI [user.yaml](https://github.com/rime/home/wiki/UserData)
 
-![gui](./images/rime_gui.png)
+![gui](./assets/rime_gui.png)
 
 通过 GUI 界面，我们可以设置一些最为基本的设置，如选择拼音输入方案（默认为朙月拼音），
 以及简繁体切换半角全角切换等。
 
 #### 1.2.1、 简繁切换
 
-![简繁转换](./images/简繁转换.gif 'Optional title')
+![简繁转换](./assets/简繁转换.gif 'Optional title')
 
 #### 1.2.2、 方案选择
 
-![方案选单](./images/方案选单.gif 'Optional title')
+![方案选单](./assets/方案选单.gif 'Optional title')
 
 #### 1.2.3、 全角半角切换
 
-![全角半角切换](./images/全角半角切换.gif 'Optional title')
+![全角半角切换](./assets/全角半角切换.gif 'Optional title')
 
 以上三选项均可通过 `user.yaml` 进行设置
 

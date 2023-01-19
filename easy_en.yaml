@@ -2,15 +2,14 @@
 ---
 patch_double_pinyin_mspy:
   __include: patch
-  speller/alphabet:
-    "zyxwvutsrqponmlkjihgfedcbaZYXWVUTSRQPONMLKJIHGFEDCBA;"
+  speller/alphabet: "zyxwvutsrqponmlkjihgfedcbaZYXWVUTSRQPONMLKJIHGFEDCBA;"
 
 patch_terra_pinyin:
   __include: patch
   speller/alphabet: >-
-      zyxwvutsrqponmlkjihgfedcbaZYXWVUTSRQPONMLKJIHGFEDCBA-;/<,>\
+    zyxwvutsrqponmlkjihgfedcbaZYXWVUTSRQPONMLKJIHGFEDCBA-;/<,>\
   speller/initials: >-
-      zyxwvutsrqponmlkjihgfedcbaZYXWVUTSRQPONMLKJIHGFEDCBA
+    zyxwvutsrqponmlkjihgfedcbaZYXWVUTSRQPONMLKJIHGFEDCBA
 
 patch:
   schema/dependencies/@next: easy_en
@@ -20,6 +19,6 @@ patch:
     enable_completion: true
     enable_sentence: true
     initial_quality: -1
-  recognizer/patterns/uppercase: ''
+  recognizer/patterns/uppercase: ""
   speller/alphabet:
     __include: easy_en.schema:/speller/alphabet

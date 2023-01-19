@@ -1,21 +1,22 @@
-## 2022-07-01
+#### 一、第一份配置
 
-##### 二、第一份配置
 分支 [`<config-2014/09/10>`](https://github.com/halfmoonvic/Rime/tree/config-2014/09/10)
-文件中的配置文档与word教程同步发布即 2014/9/10
+文件中的配置文档与 word 教程同步发布即 2014/9/10
 其中配置与教程书写顺序完全吻合。
 
-##### 三、第二份配置
-分支 [`<config-2016/02/28>`](https://github.com/halfmoonvic/Rime/tree/config-2016/02/28)   中的配置是在我初次使用小狼毫后，自己在逐渐的使用过程中添加了部分词典颜文字等功能。
-如luna_pinyin.phrase.dict.yaml词典等，更为实用。
-此份配置大体与word教程吻合，只是在特殊标点符号上面做了改进。
+#### 二、第二份配置
+
+分支 [`<config-2016/02/28>`](https://github.com/halfmoonvic/Rime/tree/config-2016/02/28) 中的配置是在我初次使用小狼毫后，自己在逐渐的使用过程中添加了部分词典颜文字等功能。
+如 luna_pinyin.phrase.dict.yaml 词典等，更为实用。
+此份配置大体与 word 教程吻合，只是在特殊标点符号上面做了改进。
 关于此，我不会在就其进行修改（因为关于特殊符号的修改本就比较复杂些，没有必要）。而欲了解改进详情机制的同学
 可以查看我在知乎发布的答案—— [Rime 输入法有比较现成的设置吗？](https://www.zhihu.com/question/20871256/answer/34365902?from=profile_answer_card)。里面做了阐述
 为了方便学习，新配置文档中各个配置均做了注释。
 
-##### 四、第三份配置
+#### 三、第三份配置
+
 分支 [`<config-2018/11/03>`](https://github.com/halfmoonvic/Rime/tree/config-2018/11/03)
-第三份配置所做的主要针对新版小狼毫(0.11.1)所做的兼容，添加新版emoji（旧版的emoji我没有移除，仍然保留在内），默认输入法列表只包含 朙月拼音。 <del>鼠须管同时也要在进行编译，可见 [How to Rime with Squirrel](https://github.com/rime/squirrel/blob/master/INSTALL.md)。编译完成之后进行替换操作，如下：</del>
+第三份配置所做的主要针对新版小狼毫(0.11.1)所做的兼容，添加新版 emoji（旧版的 emoji 我没有移除，仍然保留在内），默认输入法列表只包含 朙月拼音。 <del>鼠须管同时也要在进行编译，可见 [How to Rime with Squirrel](https://github.com/rime/squirrel/blob/master/INSTALL.md)。编译完成之后进行替换操作，如下：</del>
 
 - 先停用（输入源里移除鼠须管，等替换完成后再添加回来）「鼠须管」；
 - Finder 定位到 /Library/Input Methods 用下载的编译版本替换旧的程序；
