@@ -21,8 +21,9 @@ patch:
 
   # lua
   "engine/translators/@90": lua_translator@time_translator
-  "engine/translators/@91": lua_translator@number_translator
-  "engine/translators/@92": lua_translator@thousand_translator
+  "engine/translators/@91": lua_translator@lunar_translator
+  "engine/translators/@92": lua_translator@number_translator
+  "engine/translators/@93": lua_translator@thousand_translator
 
   # load luna_pinyin dict
   translator/dictionary: luna_pinyin.extended

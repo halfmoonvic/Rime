@@ -21,8 +21,9 @@ patch:
 
   # lua
   "engine/translators/@90": lua_translator@time_translator
-  "engine/translators/@91": lua_translator@number_translator
-  "engine/translators/@92": lua_translator@thousand_translator
+  "engine/translators/@91": lua_translator@lunar_translator
+  "engine/translators/@92": lua_translator@number_translator
+  "engine/translators/@93": lua_translator@thousand_translator
 
   # 五笔回车清屏和分号、引号上屏幕二三候选词
   key_binder/bindings:
