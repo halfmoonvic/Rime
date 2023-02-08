@@ -2,15 +2,16 @@ patch:
   __include: preset_color_schemes:/
 
   # rime style
-  style/color_scheme: dark
-  style/color_scheme_dark: dark
+  style/color_scheme: light_translucency
+  style/color_scheme_dark: dark_translucency
 
   style/font_point: 18
   style/label_font_point: 14
   style/font_face: "PingFangSC-Light"
   style/label_font_face: "PingFangSC-Light"
 
-  style/horizontal: false
+  # stacked or linear
+  style/candidate_list_layout: stacked
   style/inline_preedit: false
 
   # disable chinese input in specific programs
