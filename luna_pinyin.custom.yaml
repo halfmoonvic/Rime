@@ -118,7 +118,7 @@ patch:
     ############# a | e #############
     # a. → .a
     # ab => ba、 al => la、 am => ma | abn => ban、 alng => lang
-    - derive/^([blm])a/a$1/
+    - derive/^([bklm])a/a$1/
     # hau => hua
     # - derive/(?!^)([u])a/a$1/
 
@@ -128,7 +128,7 @@ patch:
 
     # e. → .e
     # el => le、 em => me | ezn => zen | elng => leng
-    - derive/^([bfklmrwz])e(.*)$/e$1$2/
+    - derive/^([bfklmrwyz])e(.*)$/e$1$2/
 
     # .e → e.
     # fie => fei、 gie => gei、 kie => kei、 wie => wei、 zie => zei
@@ -144,6 +144,10 @@ patch:
     # .ai → .ia | .ei → .ie
     # jai => jia、 jei => jie、 xai => xia、 xei => xie
     - derive/^([jqx])i([ae])$/$1$2i/
+
+    # e.i → .ie | .ai → .ia
+    # eji => jie、 eqi => qie、 exi => xie
+    - derive/^([jqx])i([ae])$/$2$1i/
 
     # ^i.h$ → ^h.i$
     # ia → ai、 iuh => hui、 iah => hai、 ieh => hei
