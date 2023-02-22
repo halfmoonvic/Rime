@@ -1,0 +1,68 @@
+# pinyin simp reverse lookup, trigger with `P
+patch_pinyin_simp:
+  recognizer/patterns/zlookup: "`[a-z]*'?$"
+  recognizer/patterns/reverse_lookup: "`P[a-z]*'?$"
+
+  reverse_lookup:
+    dictionary: pinyin_simp
+    prefix: "`P"
+    suffix: "'"
+    tips: 〔拼音〕
+    preedit_format:
+      - xform/([nl])v/$1ü/
+      - xform/([nl])ue/$1üe/
+      - xform/([jqxy])v/$1u/
+
+# luna_pinyin reverse lookup, trigger with `P
+patch_luna_pinyin:
+  recognizer/patterns/zlookup: "`[a-z]*'?$"
+  recognizer/patterns/reverse_lookup: "`P[a-z]*'?$"
+
+  reverse_lookup:
+    dictionary: luna_pinyin.extended
+    prefix: "`P"
+    suffix: "'"
+    tips: 〔lunar_pinyin〕
+    preedit_format:
+      - xform/([nl])v/$1ü/
+      - xform/([nl])ue/$1üe/
+      - xform/([jqxy])v/$1u/
+
+# luna_pinyin reverse lookup, trigger with `p
+patch_luna_pinyin2:
+  # to recognize '`p' to prevent it from being directly
+  # recognized as 'punct' and being displayed directly.
+  recognizer/patterns/zlookup: "`[a-z]*'?$"
+  # the short dash at the beginning of '_luna_pinyin_lookup' is to
+  # make it recognizable as the first one.
+  recognizer/patterns/_luna_pinyin_lookup: "`p[a-z]*'?$"
+
+  # @2 is abc_segmentor
+  engine/segmentors/@after 2: affix_segmentor@_luna_pinyin_lookup
+  engine/translators/@999: script_translator@_luna_pinyin_lookup
+
+  _luna_pinyin_lookup:
+    tag: _luna_pinyin_lookup
+    dictionary: luna_pinyin.extended
+    prefix: "`p"
+    suffix: "'"
+    tips: 〔朙月拼音〕
+    preedit_format:
+      - xform/([nl])v/$1ü/
+      - xform/([nl])ue/$1üe/
+      - xform/([jqxy])v/$1u/
+
+# japanese reverse lookup, trigger with `j
+patch_japanese:
+  recognizer/patterns/zlookup: "`[a-z]*'?$"
+  recognizer/patterns/_japanese_lookup: "`j[a-z]*'?$"
+
+  engine/segmentors/@after 2: affix_segmentor@_japanese_lookup
+  engine/translators/@999: script_translator@_japanese_lookup
+
+  _japanese_lookup:
+    tag: _japanese_lookup
+    dictionary: japanese
+    prefix: "`j"
+    suffix: "'"
+    tips: 〔japanese〕

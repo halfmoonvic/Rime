@@ -1,12 +1,9 @@
 # https://github.com/gkovacs/rime-japanese
 
 patch:
-  # https://github.com/rime/rime-emoji
   __include: emoji_suggestion:/patch
-
-  # https://github.com/BlindingDark/rime-easy-en
   __include: easy_en:/patch
-  easy_en/enable_sentence: false
+  __include: reverse_lookup:/patch_luna_pinyin2
 
   # import shortcut key
   key_binder/import_preset: default
@@ -20,7 +17,10 @@ patch:
   recognizer/patterns/number: "^/[0-9]+$"
 
   # lua
-  "engine/translators/@90": lua_translator@time_translator
-  "engine/translators/@91": lua_translator@lunar_translator
-  "engine/translators/@92": lua_translator@number_translator
-  "engine/translators/@93": lua_translator@thousand_translator
+  engine/translators/@90: lua_translator@time_translator
+  engine/translators/@91: lua_translator@lunar_translator
+  engine/translators/@92: lua_translator@number_translator
+  engine/translators/@93: lua_translator@thousand_translator
+
+  # default 漢字　
+  switches/@2/reset: 0
