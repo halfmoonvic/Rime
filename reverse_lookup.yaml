@@ -1,3 +1,39 @@
+# https://github.com/rime/rime-emoji/blob/master/emoji_suggestion.yaml
+patch_emoji:
+  switches/@next:
+    name: emoji_suggestion
+    reset: 1
+    states: ["🈚️️\uFE0E", "🈶️️\uFE0F"]
+  "engine/filters/@next 0": simplifier@emoji_suggestion
+  emoji_suggestion:
+    opencc_config: emoji.json
+    option_name: emoji_suggestion
+    tips: all
+
+# https://github.com/BlindingDark/rime-easy-en/blob/master/easy_en.yaml
+patch_easy_en_double_pinyin_mspy:
+  __include: patch_easy_en
+  speller/alphabet: "zyxwvutsrqponmlkjihgfedcbaZYXWVUTSRQPONMLKJIHGFEDCBA;"
+
+patch_easy_en_terra_pinyin:
+  __include: patch_easy_en
+  speller/alphabet: >-
+    zyxwvutsrqponmlkjihgfedcbaZYXWVUTSRQPONMLKJIHGFEDCBA-;/<,>\
+  speller/initials: >-
+    zyxwvutsrqponmlkjihgfedcbaZYXWVUTSRQPONMLKJIHGFEDCBA
+
+patch_easy_en:
+  schema/dependencies/@next: easy_en
+  engine/translators/@next: table_translator@easy_en
+  easy_en:
+    __include: easy_en.schema:/translator
+    enable_completion: true
+    enable_sentence: false
+    initial_quality: -1
+  recognizer/patterns/uppercase: ""
+  speller/alphabet:
+    __include: easy_en.schema:/speller/alphabet
+
 # pinyin simp reverse lookup, trigger with `P
 patch_pinyin_simp:
   recognizer/patterns/zlookup: "`[a-z]*'?$"
