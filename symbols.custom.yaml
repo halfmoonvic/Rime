@@ -3,6 +3,8 @@ symbols:
     [
       "site:zhihu.com",
       "site:github.com",
+      "site:v2ex.com",
+      "site:movie.douban.com",
       "site:tieba.baidu.com",
       "site:wikipedia.org",
       "site:developer.mozilla.org",
