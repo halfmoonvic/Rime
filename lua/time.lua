@@ -23,29 +23,43 @@ translator 的输出是若干候选项。
 请看如下示例：
 --]]
 
-local function translator(input, seg)
-  local weakTabEN = { 'Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday' }
-  local weakTabCN = { '日', '一', '二', '三', '四', '五', '六' }
-  local weekEN = weakTabEN[tonumber(os.date("%w") + 1)]
-  local weekCN = weakTabCN[tonumber(os.date("%w") + 1)]
+require("jieqi")
 
-  if (input == "time" or input == "sj") then
-    local time = os.date("%H:%M:%S")
-    local fullTimeEN = os.date("%Y-%m-%d") .. " " .. time .. " " .. weekEN
-    local fullTimeCN = os.date("%Y-%m-%d") .. " " .. time .. " " .. '星期' .. weekCN
-    yield(Candidate("time", seg.start, seg._end, time, " Time"))
-    yield(Candidate("time", seg.start, seg._end, fullTimeEN, " Time"))
-    yield(Candidate("time", seg.start, seg._end, fullTimeCN, " Chinese"))
+local function translator(input, seg)
+  if (not (input == "time" or input == "shijian" or
+      input == "sj" or input == "date" or input == "week")) then
+    return
+  end
+
+  local WEEK = { 'Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday' }
+  local WEEKCN = { '日', '一', '二', '三', '四', '五', '六' }
+
+  local jq = JQNow(os.date("%Y%m%d"))
+  jq = jq ~= "" and "〔" .. jq .. "〕" or ""
+
+  local time = os.date("%H:%M:%S")
+  local weekEN = WEEK[tonumber(os.date("%w") + 1)]
+  local weekCN = WEEKCN[tonumber(os.date("%w") + 1)]
+  local dateEN = os.date("%Y-%m-%d")
+  local dateCN = os.date("%Y年%m月%d日")
+
+  if (input == "time" or input == "shijian" or input == "sj") then
+    local fullTimeEN = dateEN .. " " .. time .. " " .. weekEN
+    local fullTimeCN = dateCN .. " " .. time .. " " .. '星期' .. weekCN
+
+    yield(Candidate("time", seg.start, seg._end, time, ""))
+    yield(Candidate("time", seg.start, seg._end, fullTimeEN, jq))
+    yield(Candidate("time", seg.start, seg._end, fullTimeCN, jq))
   end
 
   if (input == "date") then
-    yield(Candidate("date", seg.start, seg._end, os.date("%Y-%m-%d"), "Date"))
-    yield(Candidate("date", seg.start, seg._end, os.date("%Y年%m月%d日"), "Chinese"))
+    yield(Candidate("date", seg.start, seg._end, dateEN, jq))
+    yield(Candidate("date", seg.start, seg._end, dateCN, jq))
   end
 
   if (input == "week") then
-    yield(Candidate("week", seg.start, seg._end, weekEN, "Week"))
-    yield(Candidate("week", seg.start, seg._end, "星期" .. weekCN, "Chinese"))
+    yield(Candidate("week", seg.start, seg._end, weekEN, ""))
+    yield(Candidate("week", seg.start, seg._end, "星期" .. weekCN, ""))
   end
 end
 

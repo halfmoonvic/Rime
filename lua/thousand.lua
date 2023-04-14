@@ -19,14 +19,14 @@ function formatnumberthousands_translator(input, seg)
     if tonumber(n) ~= nil then -- 参数是数字
       local result = formatnumberthousands(n) --- 调用算法
       --[[ 用 `yield` 产生一个候选项
-              候选项的构造函数是 `Candidate`，它有五个参数：
-              - type: 字符串，表示候选项的类型（可随意取）
-              - start: 候选项对应的输入串的起始位置
-              - _end:  候选项对应的输入串的结束位置
-              - text:  候选项的文本
-              - comment: 候选项的注释
-         --]]
-      yield(Candidate("number", seg.start, seg._end, result, "千位數標示"))
+    候选项的构造函数是 `Candidate`，它有五个参数：
+    - type: 字符串，表示候选项的类型（可随意取）
+    - start: 候选项对应的输入串的起始位置
+    - _end:  候选项对应的输入串的结束位置
+    - text:  候选项的文本
+    - comment: 候选项的注释
+   --]]
+      yield(Candidate("number", seg.start, seg._end, result, "〔千分位〕"))
     end
   end
 end
