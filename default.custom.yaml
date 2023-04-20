@@ -1,10 +1,16 @@
 patch:
-  # candidates per page
-  menu/page_size: 5
+  # input schema repository, https://github.com/rime/plum
+  schema_list:
+    - schema: luna_pinyin
+    - schema: wubi86
+    - schema: japanese
+    - schema: easy_en
 
   # call out IME menu
-  switcher/hotkeys:
-    - Control+grave
+  switcher/hotkeys: [Control+grave]
+
+  # candidates per page
+  menu/page_size: 5
 
   # switch between Chinese and English
   # https://gist.github.com/lotem/2981316
@@ -15,13 +21,6 @@ patch:
     Shift_R: commit_code
     Control_L: noop
     Control_R: noop
-
-  # input schema repository, https://github.com/rime/plum
-  schema_list:
-    - schema: luna_pinyin
-    - schema: wubi86
-    - schema: japanese
-    - schema: easy_en
 
   # shortcut key
   # import the following definition to enable in your schema:
