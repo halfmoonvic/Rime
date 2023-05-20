@@ -133,7 +133,7 @@ patch:
     # fie => fei、 gie => gei、 kie => kei、 wie => wei、 zie => zei
     # fne => fen、 gne => gen、 kne => ken、 wne => wen、 zne => zen
     - derive/^([fgkwz])e([i])$/$1$2e/
-    - derive/^([fgkrwz])e([n])$/$1$2e/
+    - derive/^([bfgkrwz])e([n])$/$1$2e/
 
     ############### i ###############
     # .ia → .ai
