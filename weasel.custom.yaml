@@ -2,7 +2,7 @@ patch:
   __include: preset_color_schemes:/
 
   # rime style
-  style/color_scheme: dark
+  style/color_scheme: dark_translucency_win
 
   style/font_point: 14
   style/font_face: "YaHei Consolas Hybrid"
