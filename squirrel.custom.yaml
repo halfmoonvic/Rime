@@ -12,7 +12,7 @@ patch:
 
   # stacked or linear
   style/candidate_list_layout: stacked
-  style/inline_preedit: false
+  style/inline_preedit: true
 
   # disable chinese input in specific programs
   # Application_Name: ll /Applications

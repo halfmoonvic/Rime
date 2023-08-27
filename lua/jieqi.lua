@@ -935,14 +935,22 @@ end
 -- print(JQNow("20230420")) --测试函数
 -- print(table.concat(GetNextJQ("20210101")))
 
---列出当年余下的节气
+function jieqi(date, seg)
+  local jqs = GetNowTimeJq(date)
+  for i = 1, #jqs do
+    yield(Candidate("jieqi", seg.start, seg._end, jqs[i], "〔节气〕"))
+  end
+  jqs = nil
+end
+
 function translator(input, seg)
-  if (input == "jieqi" or input == "jq") then
-    local jqs = GetNowTimeJq(os.date("%Y%m%d"))
-    for i = 1, #jqs do
-      yield(Candidate("jieqi", seg.start, seg._end, jqs[i], "〔节气〕"))
-    end
-    jqs = nil
+  --列出当年所有的节气
+  if (input == "jieqi") then
+    jieqi(os.date("%Y0101"), seg)
+  end
+  --列出当年余下的节气
+  if (input == "jq") then
+    jieqi(os.date("%Y%m%d"), seg)
   end
 end
 
