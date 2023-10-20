@@ -18,9 +18,19 @@ patch:
   # Application_Name: ll /Applications
   # Bundle_Identifier: osascript -e 'id of app "Application_Name"'
   app_options/com.apple.finder/ascii_mode: true
+  app_options/com.adobe.Photoshop/ascii_mode: true
   app_options/com.apple.Terminal/ascii_mode: true
   app_options/com.googlecode.iterm2/ascii_mode: true
-  app_options/com.adobe.Photoshop/ascii_mode: true
-  app_options/com.microsoft.VSCode/ascii_mode: false
-  app_options/com.sublimetext.4/ascii_mode: false
   app_options/com.google.Chrome/ascii_mode: false
+
+  app_options/md.obsidian:
+    ascii_mode: false
+    vim_mode: true
+
+  app_options/com.sublimetext.4:
+    ascii_mode: false
+    vim_mode: true
+
+  app_options/com.microsoft.VSCode:
+    ascii_mode: false
+    vim_mode: true
