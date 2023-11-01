@@ -1,4 +1,4 @@
--- https://github.com/hchunhui/librime-lua
+-- https://github.com/hchunhui/librime-lua/blob/master/sample/lua/number.lua
 number = require("number")
 
 -- https://github.com/hchunhui/librime-lua/issues/14
