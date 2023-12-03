@@ -5,9 +5,6 @@ patch:
   __include: reverse_lookup:/patch_easy_en
   __include: reverse_lookup:/patch_luna_pinyin2
 
-  # import shortcut key
-  key_binder/import_preset: default
-
   # import punctuator and special symbols
   punctuator/import_preset: symbols
 
@@ -25,7 +22,9 @@ patch:
   engine/translators/@95: lua_translator@ganzhi
 
   # 五笔回车清屏和分号、引号上屏幕二三候选词
-  key_binder/bindings:
-    - { when: composing, accept: Return, send: Escape }
-    - { when: has_menu, accept: semicolon, send: 2 }
-    - { when: has_menu, accept: apostrophe, send: 3 }
+  key_binder:
+    import_preset: default
+    bindings:
+      - { when: composing, accept: Return, send: Escape }
+      - { when: has_menu, accept: semicolon, send: 2 }
+      - { when: has_menu, accept: apostrophe, send: 3 }
