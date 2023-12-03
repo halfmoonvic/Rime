@@ -55,6 +55,7 @@ sort: by_weight
 ご	go
 さ	sa
 し	shi
+し	si
 す	su
 せ	se
 そ	so
@@ -65,12 +66,14 @@ sort: by_weight
 ぞ	zo
 た	ta
 ち	chi
+ち	ti
 つ	tsu
+つ	tu
 て	te
 と	to
 だ	da
-ぢ	ji
-づ	zu
+ぢ	di
+づ	du
 で	de
 ど	do
 な	na
@@ -81,6 +84,7 @@ sort: by_weight
 は	ha
 ひ	hi
 ふ	fu
+ふ	hu
 へ	he
 ほ	ho
 ば	ba
@@ -130,6 +134,7 @@ sort: by_weight
 ゴ	go
 サ	sa
 シ	shi
+シ	si
 ス	su
 セ	se
 ソ	so
@@ -140,12 +145,14 @@ sort: by_weight
 ゾ	zo
 タ	ta
 チ	chi
+チ	ti
 ツ	tsu
+ツ	tu
 テ	te
 ト	to
 ダ	da
-ヂ	ji
-ヅ	zu
+ヂ	di
+ヅ	du
 デ	de
 ド	do
 ナ	na
@@ -156,6 +163,7 @@ sort: by_weight
 ハ	ha
 ヒ	hi
 フ	fu
+フ	hu
 ヘ	he
 ホ	ho
 バ	ba

@@ -2,11 +2,8 @@
 
 patch:
   __include: reverse_lookup:/patch_emoji
-  __include: reverse_lookup:/patch_easy_en
+  __include: reverse_lookup:/patch_easy_en_japanese
   __include: reverse_lookup:/patch_luna_pinyin2
-
-  # import shortcut key
-  key_binder/import_preset: default
 
   # import punctuator and special symbols
   punctuator/import_preset: symbols
@@ -23,6 +20,14 @@ patch:
   engine/translators/@93: lua_translator@lunar
   engine/translators/@94: lua_translator@jieqi
   engine/translators/@95: lua_translator@ganzhi
+
+  # paging_with_minus_equal conflicts with long sounds in katakana
+  key_binder/bindings:
+    __patch:
+      - key_bindings:/emacs_editing
+      - key_bindings:/move_by_word_with_tab
+      - key_bindings:/paging_with_comma_period
+      - key_bindings:/numbered_mode_switch
 
   # default 漢字　
   switches/@2/reset: 0
