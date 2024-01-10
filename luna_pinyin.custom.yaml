@@ -138,7 +138,7 @@ patch:
     ############### i ###############
     # .ia → .ai
     # kuia => kuai、 bia => bai、 cia => cai、 hia => hai
-    - derive/^(ku|ch|[bchgkstwz])([a])i$/$1i$2/
+    - derive/^(ku|ch|[bchgkmstwz])([a])i$/$1i$2/
 
     # .ai → .ia | .ei → .ie
     # jai => jia、 jei => jie、 xai => xia、 xei => xie
