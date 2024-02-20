@@ -8,6 +8,12 @@ patch:
   # import punctuator and special symbols
   punctuator/import_preset: symbols
 
+  punctuator/full_shape:
+    " ": { commit: "　" }
+
+  punctuator/half_shape:
+    " ": { commit: "　" }
+
   # recognize symbols
   recognizer/patterns/punct: "^/([0-9]0?|[A-Za-z]+)$"
   # recognize number.lua
