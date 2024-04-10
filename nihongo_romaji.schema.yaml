@@ -1,0 +1,297 @@
+# Rime schema
+# encoding: utf-8
+
+schema:
+  schema_id: nihongo_romaji
+  name: 日本語ローマ字
+  version: "0.1"
+  author:
+    - StarBrilliant <m13253@hotmail.com>
+  description: |
+    日本語ローマ字入力
+
+switches:
+  - name: ascii_mode
+    reset: 0
+    states: [ 英数, かな ]
+  - name: full_shape
+    states: [ 半角, 全角 ]
+
+engine:
+  processors:
+    - ascii_composer
+    - recognizer
+    - key_binder
+    - speller
+    - punctuator
+    - selector
+    - navigator
+    - express_editor
+  segmentors:
+    - ascii_segmentor
+    - matcher
+    - abc_segmentor
+    - punct_segmentor
+    - fallback_segmentor
+  translators:
+    - echo_translator
+    - punct_translator
+    - script_translator
+    - script_translator@echo
+  filters:
+    - uniquifier
+
+speller:
+  alphabet: "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ-~/,."
+  delimiter: " "
+  algebra:
+    - "derive/ー/-/"
+    - "derive/〜/~/"
+    - "derive/・/\\x2f/"
+    - "xform/ぁ/xa/"
+    - "xform/あ/a/"
+    - "xform/ぃ/xi/"
+    - "xform/い/i/"
+    - "xform/ぅ/xu/"
+    - "xform/う/u/"
+    - "xform/ぇ/xe/"
+    - "xform/え/e/"
+    - "xform/ぉ/xo/"
+    - "xform/お/o/"
+    - "xform/か/ka/"
+    - "xform/が/ga/"
+    - "xform/き/ki/"
+    - "xform/ぎ/gi/"
+    - "xform/く/ku/"
+    - "xform/ぐ/gu/"
+    - "xform/け/ke/"
+    - "xform/げ/ge/"
+    - "xform/こ/ko/"
+    - "xform/ご/go/"
+    - "xform/さ/sa/"
+    - "xform/ざ/za/"
+    - "xform/し/si/"
+    - "xform/じ/zi/"
+    - "xform/す/su/"
+    - "xform/ず/zu/"
+    - "xform/せ/se/"
+    - "xform/ぜ/ze/"
+    - "xform/そ/so/"
+    - "xform/ぞ/zo/"
+    - "xform/た/ta/"
+    - "xform/だ/da/"
+    - "xform/ち/ti/"
+    - "xform/ぢ/di/"
+    - "xform/っ/xtu/"
+    - "xform/つ/tu/"
+    - "xform/づ/du/"
+    - "xform/て/te/"
+    - "xform/で/de/"
+    - "xform/と/to/"
+    - "xform/ど/do/"
+    - "xform/な/na/"
+    - "xform/に/ni/"
+    - "xform/ぬ/nu/"
+    - "xform/ね/ne/"
+    - "xform/の/no/"
+    - "xform/は/ha/"
+    - "xform/ば/ba/"
+    - "xform/ぱ/pa/"
+    - "xform/ひ/hi/"
+    - "xform/び/bi/"
+    - "xform/ぴ/pi/"
+    - "xform/ふ/hu/"
+    - "xform/ぶ/bu/"
+    - "xform/ぷ/pu/"
+    - "xform/へ/he/"
+    - "xform/べ/be/"
+    - "xform/ぺ/pe/"
+    - "xform/ほ/ho/"
+    - "xform/ぼ/bo/"
+    - "xform/ぽ/po/"
+    - "xform/ま/ma/"
+    - "xform/み/mi/"
+    - "xform/む/mu/"
+    - "xform/め/me/"
+    - "xform/も/mo/"
+    - "xform/ゃ/xya/"
+    - "xform/や/ya/"
+    - "xform/ゅ/xyu/"
+    - "xform/ゆ/yu/"
+    - "xform/ょ/xyo/"
+    - "xform/よ/yo/"
+    - "xform/ら/ra/"
+    - "xform/り/ri/"
+    - "xform/る/ru/"
+    - "xform/れ/re/"
+    - "xform/ろ/ro/"
+    - "xform/ゎ/xwa/"
+    - "xform/わ/wa/"
+    - "xform/ゐ/whi/"
+    - "xform/ゑ/whe/"
+    - "xform/を/wo/"
+    - "xform/ん/nn/"
+    - "xform/ゔ/vu/"
+    - "xform/ゕ/xka/"
+    - "xform/ゖ/xke/"
+    - "derive/xtu([bcdfghjkmpqrstvwyz])/$1$1/"
+    - "derive/si/shi/"
+    - "derive/zi/ji/"
+    - "derive/ti/chi/"
+    - "derive/tu/tsu/"
+    - "derive/hu/fu/"
+    - "derive/jixy([aeo])/j$1/"
+    - "derive/fux([aieo])/f$1/"
+    - "derive/fuxy([auo])/fy$1/"
+    - "derive/([bcdghkmnpqrstvwyz])ixy/$1y/"
+    - "derive/sy([auo])/sh$1/"
+    - "derive/ty([auo])/ch$1/"
+    - "derive/vux([aieo])/v$1/"
+    - "derive/x/l/"
+    - "fuzz/nn/n/"
+
+translator:
+  dictionary: nihongo_romaji
+  enable_sentence: true
+  preedit_format:
+    - "xform/ //"
+    - "xform/l/x/"
+    - "xform/([bcdfghjkmpqrstvwyz])\\1/っ$1/"
+    - "xform/tc/っc/"
+    - "xform/cc/っc/"
+    - "xform/j([auo])/jixy$1/"
+    - "xform/f([aieo])/fux$1/"
+    - "xform/fy([auo])/fuxy$1/"
+    - "xform/sh([auo])/sy$1/"
+    - "xform/ch([auo])/ty$1/"
+    - "xform/([bcdghkmnpqrstvwyz])y/$1ixy/"
+    - "xform/shi/si/"
+    - "xform/ji/zi/"
+    - "xform/chi/ti/"
+    - "xform/tsu/tu/"
+    - "xform/fu/hu/"
+    - "xform/ka/か/"
+    - "xform/ga/が/"
+    - "xform/ki/き/"
+    - "xform/gi/ぎ/"
+    - "xform/ku/く/"
+    - "xform/gu/ぐ/"
+    - "xform/ke/け/"
+    - "xform/ge/げ/"
+    - "xform/ko/こ/"
+    - "xform/go/ご/"
+    - "xform/sa/さ/"
+    - "xform/za/ざ/"
+    - "xform/si/し/"
+    - "xform/zi/じ/"
+    - "xform/su/す/"
+    - "xform/zu/ず/"
+    - "xform/se/せ/"
+    - "xform/ze/ぜ/"
+    - "xform/so/そ/"
+    - "xform/zo/ぞ/"
+    - "xform/ta/た/"
+    - "xform/da/だ/"
+    - "xform/ti/ち/"
+    - "xform/di/ぢ/"
+    - "xform/xtu/っ/"
+    - "xform/tu/つ/"
+    - "xform/du/づ/"
+    - "xform/te/て/"
+    - "xform/de/で/"
+    - "xform/to/と/"
+    - "xform/do/ど/"
+    - "xform/na/な/"
+    - "xform/ni/に/"
+    - "xform/nu/ぬ/"
+    - "xform/ne/ね/"
+    - "xform/no/の/"
+    - "xform/ha/は/"
+    - "xform/ba/ば/"
+    - "xform/pa/ぱ/"
+    - "xform/hi/ひ/"
+    - "xform/bi/び/"
+    - "xform/pi/ぴ/"
+    - "xform/hu/ふ/"
+    - "xform/bu/ぶ/"
+    - "xform/pu/ぷ/"
+    - "xform/he/へ/"
+    - "xform/be/べ/"
+    - "xform/pe/ぺ/"
+    - "xform/ho/ほ/"
+    - "xform/bo/ぼ/"
+    - "xform/po/ぽ/"
+    - "xform/ma/ま/"
+    - "xform/mi/み/"
+    - "xform/mu/む/"
+    - "xform/me/め/"
+    - "xform/mo/も/"
+    - "xform/xya/ゃ/"
+    - "xform/ya/や/"
+    - "xform/xyu/ゅ/"
+    - "xform/yu/ゆ/"
+    - "xform/xyo/ょ/"
+    - "xform/yo/よ/"
+    - "xform/ra/ら/"
+    - "xform/ri/り/"
+    - "xform/ru/る/"
+    - "xform/re/れ/"
+    - "xform/ro/ろ/"
+    - "xform/xwa/ゎ/"
+    - "xform/wa/わ/"
+    - "xform/whi/ゐ/"
+    - "xform/whe/ゑ/"
+    - "xform/wo/を/"
+    - "xform/nn/ん/"
+    - "xform/vu/ゔ/"
+    - "xform/xka/ゕ/"
+    - "xform/xke/ゖ/"
+    - "xform/xa/ぁ/"
+    - "xform/a/あ/"
+    - "xform/xi/ぃ/"
+    - "xform/i/い/"
+    - "xform/xu/ぅ/"
+    - "xform/u/う/"
+    - "xform/xe/ぇ/"
+    - "xform/e/え/"
+    - "xform/xo/ぉ/"
+    - "xform/o/お/"
+    - "xform/n/ん/"
+    - "xform/\\x2f/・/"
+    - "xform/~/〜/"
+    - "xform/-/ー/"
+
+echo:
+   dictionary: nihongo_echo
+   prism: nihongo_romaji
+   initial_quality: 100
+
+punctuator:
+  import_preset: default
+  full_shape:
+    " " : { commit: "　" }
+    "," : [ "、", "，" ]
+    "\\" : [ ￥ ]
+    "$" : [ ＄ ]
+  half_shape:
+    "," : [ "、", "，" ]
+    "\\" : [ ¥ ]
+    "$" : [ $ ]
+
+key_binder:
+  # import_preset: default
+  bindings:
+    __patch:
+      - key_bindings:/emacs_editing
+      - key_bindings:/move_by_word_with_tab
+      - key_bindings:/paging_with_comma_period
+      - key_bindings:/numbered_mode_switch
+    # - { when: has_menu, accept: comma, send: comma }
+    # - { when: has_menu, accept: period, send: period }
+    # - { when: has_menu, accept: minus, send: minus }
+    # - { when: has_menu, accept: equal, send: equal }
+    # - { when: has_menu, accept: space, send: Down }
+    # - { when: has_menu, accept: Return, send: space }
+
+recognizer:
+  import_preset: default
