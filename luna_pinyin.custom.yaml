@@ -28,6 +28,9 @@ patch:
   translator/dictionary: luna_pinyin.extended
   speller/algebra/@before 0: xform/^([a-z])$/$1_/
 
+  # default 汉字
+  switches/@2/reset: 1
+
   # https://gist.github.com/lotem/2320943
   # 【朙月拼音】模糊音定製模板
 
