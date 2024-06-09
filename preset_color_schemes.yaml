@@ -54,7 +54,7 @@ preset_color_schemes:
     comment_text_color: 0x808080
 
   light_translucency_win:
-    name: "light_translucency"
+    name: "light_translucency_win"
 
     candidate_format: "%c.\u2005%@\u2005"
     translucency: true
@@ -82,7 +82,7 @@ preset_color_schemes:
     comment_text_color: 0x333333
 
   dark_translucency_win:
-    name: "dark_translucency"
+    name: "dark_translucency_win"
 
     candidate_format: "%c.\u2005%@\u2005"
     translucency: true
