@@ -179,7 +179,7 @@ patch:
     ############### u ###############
     # u. → .u
     # uz => zu、 uxn => xun
-    - derive/^([gqtxz])u/u$1/
+    - derive/^([dgqtxz])u/u$1/
 
     # .u → u.
     # jeu => jue、 xnu => xun、 xeu => xue、 ynu => yun、 yeu => yue
