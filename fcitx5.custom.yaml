@@ -1,0 +1,22 @@
+# ~/.config/fcitx5/conf/classicui.conf
+# fcitx5 style settings
+# Vertical Candidate List=False
+# PerScreenDPI=True
+# Font="Microsoft YaHei Mono 14" # fc-list (list system fonts)
+# Theme=spring
+
+patch:
+
+  # You may obtain the app name via
+  # dbus-send --print-reply=literal --dest=org.fcitx.Fcitx5 /controller org.fcitx.Fcitx.Controller1.DebugInfo
+  app_options/gnome-terminal/ascii_mode: true
+  app_options/gnome-terminal-server/ascii_mode: true
+  app_options/synapse/ascii_mode: true
+
+  app_options/sublime_text:
+    ascii_mode: false
+    vim_mode: true
+
+  app_options/code:
+    ascii_mode: false
+    vim_mode: true

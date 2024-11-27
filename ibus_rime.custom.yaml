@@ -1,0 +1,3 @@
+patch:
+  style/horizontal: false
+  style/inline_preedit: true
