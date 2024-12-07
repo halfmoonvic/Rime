@@ -2,8 +2,8 @@ patch:
   __include: preset_color_schemes:/
 
   # rime style
-  style/color_scheme: light_translucency
-  style/color_scheme_dark: dark_translucency
+  style/color_scheme: macos-light
+  style/color_scheme_dark: macos-dark
 
   style/font_point: 18
   style/label_font_point: 14
@@ -32,5 +32,14 @@ patch:
     vim_mode: true
 
   app_options/com.microsoft.VSCode:
+    ascii_mode: false
+    vim_mode: true
+
+  app_options/com.exafunction.windsurf:
+    ascii_mode: false
+    vim_mode: true
+
+  # cursor
+  app_options/com.todesktop.230313mzl4w4u92:
     ascii_mode: false
     vim_mode: true
