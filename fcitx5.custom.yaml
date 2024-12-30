@@ -11,6 +11,7 @@ patch:
   # dbus-send --print-reply=literal --dest=org.fcitx.Fcitx5 /controller org.fcitx.Fcitx.Controller1.DebugInfo
   app_options/gnome-terminal/ascii_mode: true
   app_options/gnome-terminal-server/ascii_mode: true
+  app_options/org.gnome.Nautilus/ascii_mode: true
   app_options/synapse/ascii_mode: true
 
   app_options/sublime_text:
