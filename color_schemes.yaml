@@ -1,0 +1,346 @@
+style:
+  layout:
+    border: 1
+    spacing: 10
+    # candidate_spacing: 22 # horizontal true
+    candidate_spacing: 10 # horizontal false
+    hilite_spacing: 6
+    hilite_padding_x: 8
+    hilite_padding_y: 2
+    corner_radius: 8
+    round_corner: 6
+    shadow_radius: 8
+    margin_x: 16
+    margin_y: 8
+
+color_schemes:
+  light:
+    name: "light"
+
+    candidate_format: "%c.\u2005%@\u2005"
+
+    # layout
+    border_width: 1
+    border_height: 1
+    corner_radius: 6
+    hilited_corner_radius: 0
+    line_spacing: 7
+    spacing: 3
+
+    # background
+    back_color: 0xf9f9f9
+    border_color: 0xf9f9f9
+
+    # preedit
+    text_color: 0x808080
+    hilited_text_color: 0x000000
+    hilited_back_color: 0xf9f9f9
+
+    # hilited candidate
+    hilited_candidate_text_color: 0xc98915
+    hilited_candidate_label_color: 0xc98915
+    hilited_comment_text_color: 0x333333
+    hilited_candidate_back_color: 0xf9f9f9
+
+    # candidate
+    label_color: 0x888888
+    candidate_text_color: 0x000000
+    comment_text_color: 0x808080
+
+  dark:
+    name: "dark"
+
+    candidate_format: "%c.\u2005%@\u2005"
+
+    # layout
+    border_width: 1
+    border_height: 1
+    corner_radius: 6
+    hilited_corner_radius: 0
+    line_spacing: 7
+    spacing: 3
+
+    # background
+    back_color: 0x2c2c2c
+    border_color: 0x2c2c2c
+
+    # preedit
+    text_color: 0x808080
+    hilited_text_color: 0xdedddd
+    hilited_back_color: 0x2c2c2c
+
+    # hilited candidate
+    hilited_candidate_text_color: 0xdaaa43
+    hilited_candidate_label_color: 0xdaaa43
+    hilited_candidate_back_color: 0x2c2c2c
+
+    # candidate
+    label_color: 0x888888
+    candidate_text_color: 0xdedddd
+    comment_text_color: 0x808080
+
+  win-light:
+    name: "win-light"
+
+    # background
+    back_color: 0xfff9f9f9
+    border_color: 0x00000000
+    shadow_color: 0x20000000
+
+    # preedit
+    text_color: 0x333333
+    hilited_text_color: 0x000000
+    hilited_back_color: 0x00000000
+    hilited_shadow_color: 0x00000000
+
+    # hilited candidate
+    hilited_mark_color: 0x00c06700
+    hilited_label_color: 0x7b4d00
+    hilited_candidate_text_color: 0x7b4d00
+    hilited_candidate_label_color: 0x7b4d00
+    hilited_comment_text_color: 0x333333
+
+    hilited_candidate_back_color: 0x00000000
+    hilited_candidate_border_color: 0x00000000
+    hilited_candidate_shadow_color: 0x00000000
+
+    # candidate
+    label_color: 0x333333
+    candidate_text_color: 0x000000
+    comment_text_color: 0x333333
+    candidate_back_color: 0x00000000
+    candidate_border_color: 0x00000000
+    candidate_shadow_color: 0x00000000
+
+  win-dark:
+    name: "win-dark"
+
+    # background
+    back_color: 0xff2c2c2c
+    border_color: 0x00000000
+    shadow_color: 0x20000000
+
+    # preedit
+    text_color: 0xdedddd
+    hilited_text_color: 0xffffff
+    hilited_back_color: 0x00000000
+    hilited_shadow_color: 0x00000000
+
+    # hilited candidate
+    hilited_mark_color: 0x00ffc24c
+    hilited_label_color: 0xf6d07f
+    hilited_candidate_label_color: 0xf6d07f
+    hilited_candidate_text_color: 0xf6d07f
+    hilited_comment_text_color: 0xdedddd
+
+    hilited_candidate_back_color: 0x00000000
+    hilited_candidate_border_color: 0x00000000
+    hilited_candidate_shadow_color: 0x00000000
+
+    # candidate
+    label_color: 0xdedddd
+    candidate_text_color: 0xffffff
+    comment_text_color: 0xdedddd
+    candidate_back_color: 0x00000000
+    candidate_border_color: 0x00000000
+    candidate_shadow_color: 0x00000000
+
+  win11-light:
+    name: "win11-light"
+
+    # background
+    back_color: 0xfff9f9f9
+    border_color: 0x00000000
+    shadow_color: 0x20000000
+
+    # preedit
+    text_color: 0x191919
+    hilited_text_color: 0x191919
+    hilited_back_color: 0x00000000
+    hilited_shadow_color: 0x00000000
+
+    # hilited candidate
+    hilited_mark_color: 0xc06700
+    hilited_label_color: 0x191919
+    hilited_candidate_text_color: 0x191919
+    hilited_comment_text_color: 0x333333
+
+    hilited_candidate_back_color: 0xfff0f0f0
+    hilited_candidate_border_color: 0x00000000
+    hilited_candidate_shadow_color: 0x00000000
+
+    # candidate
+    label_color: 0x191919
+    candidate_text_color: 0x191919
+    comment_text_color: 0x333333
+    candidate_back_color: 0x00000000
+    candidate_border_color: 0x00000000
+    candidate_shadow_color: 0x00000000
+
+  win11-dark:
+    name: "win11-dark"
+
+    # background
+    back_color: 0xff2c2c2c
+    border_color: 0x00000000
+    shadow_color: 0x20000000
+
+    # preedit
+    text_color: 0xfff9f9f9
+    hilited_text_color: 0xfff9f9f9
+    hilited_back_color: 0x00000000
+    hilited_shadow_color: 0x00000000
+
+    # hilited candidate
+    hilited_mark_color: 0xffc24c
+    hilited_label_color: 0xffaeb0b0
+    hilited_candidate_text_color: 0xfff9f9f9
+    hilited_comment_text_color: 0xdedddd
+
+    hilited_candidate_back_color: 0xff383838
+    hilited_candidate_border_color: 0x00000000
+    hilited_candidate_shadow_color: 0x00000000
+
+    # candidate
+    label_color: 0xffaeb0b0
+    candidate_text_color: 0xffcdcecb
+    comment_text_color: 0xdedddd
+    candidate_back_color: 0x00000000
+    candidate_border_color: 0x00000000
+    candidate_shadow_color: 0x00000000
+
+  macos-light:
+    name: "macos-light"
+
+    candidate_format: "%c.\u2005%@\u2005"
+    translucency: true
+
+    # layout
+    border_width: 1
+    border_height: 1
+    corner_radius: 6
+    hilited_corner_radius: 0
+    line_spacing: 7
+    spacing: 3
+
+    # background
+    back_color: 0x1affffff
+    border_color: 0x00000000
+
+    # preedit
+    text_color: 0x333333
+    hilited_text_color: 0x000000
+    hilited_back_color: 0x00000000
+
+    # hilited candidate
+    hilited_candidate_text_color: 0x7b4d00
+    hilited_candidate_label_color: 0x7b4d00
+    hilited_comment_text_color: 0x333333
+    hilited_candidate_back_color: 0x00ffffff
+
+    # candidate
+    label_color: 0x333333
+    candidate_text_color: 0x000000
+    comment_text_color: 0x333333
+
+  macos-dark:
+    name: "macos-dark"
+
+    candidate_format: "%c.\u2005%@\u2005"
+    translucency: true
+
+    # layout
+    border_width: 1
+    border_height: 1
+    corner_radius: 6
+    hilited_corner_radius: 0
+    line_spacing: 7
+    spacing: 3
+
+    # background
+    back_color: 0x1a000000
+    border_color: 0x00000000
+
+    # preedit
+    text_color: 0xdedddd
+    hilited_text_color: 0xffffff
+    hilited_back_color: 0x00000000
+
+    # hilited candidate
+    hilited_candidate_text_color: 0xf6d07f
+    hilited_candidate_label_color: 0xf6d07f
+    hilited_comment_text_color: 0xdedddd
+    hilited_candidate_back_color: 0x00000000
+
+    # candidate
+    label_color: 0xdedddd
+    candidate_text_color: 0xffffff
+    comment_text_color: 0xdedddd
+
+  macos-sequoia-light:
+    name: "macos-sequoia-light"
+
+    candidate_format: "%c\u2005%@\u2005"
+    translucency: true
+
+    # layout
+    border_width: 0
+    border_height: 0
+    corner_radius: 5
+    hilited_corner_radius: 0
+    line_spacing: 7
+    spacing: 3
+
+    # background
+    back_color: 0x1acdc9ca
+    border_color: 0x00000000
+
+    # preedit
+    text_color: 0x565656
+    hilited_text_color: 0x000000
+    hilited_back_color: 0x00ffffff
+
+    # hilited candidate
+    hilited_candidate_text_color: 0xffffff
+    hilited_candidate_label_color: 0xffffff
+    hilited_comment_text_color: 0xffffff
+    hilited_candidate_back_color: 0xffd75a00
+
+    # candidate
+    label_color: 0x565656
+    candidate_text_color: 0x000000
+    comment_text_color: 0x000000
+
+  macos-sequoia-dark:
+    name: "macos-sequoia-dark"
+
+    candidate_format: "%c\u2005%@\u2005"
+    translucency: true
+
+    # layout
+    border_width: 0
+    border_height: 0
+    corner_radius: 5
+    hilited_corner_radius: 0
+    line_spacing: 7
+    spacing: 3
+
+    # background
+    back_color: 0x1a373134
+    border_color: 0x00000000
+
+    # preedit
+    text_color: 0xdedddd
+    hilited_text_color: 0xffffff
+    hilited_back_color: 0x00000000
+
+    # hilited candidate
+    hilited_candidate_text_color: 0xffffff
+    hilited_candidate_label_color: 0xf6d07f
+    hilited_comment_text_color: 0xdedddd
+    hilited_candidate_back_color: 0xffd75a00
+
+    # candidate
+    label_color: 0xdedddd
+    candidate_text_color: 0xffffff
+    comment_text_color: 0xdedddd

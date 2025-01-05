@@ -1,36 +1,56 @@
+# https://github.com/rime/squirrel/wiki/squirrel.yaml-%E9%85%8D%E7%BD%AE%E6%8C%87%E5%8D%97
+
 patch:
-  __include: preset_color_schemes:/
 
-  # rime style
-  style/color_scheme: light_translucency
-  style/color_scheme_dark: dark_translucency
+  preset_color_schemes/+:
+    __include: color_schemes:/color_schemes
 
-  style/font_point: 18
-  style/label_font_point: 14
-  style/font_face: "PingFangSC-Light"
-  style/label_font_face: "PingFangSC-Light"
+  style/+:
+    color_scheme: macos-sequoia-light
+    color_scheme_dark: macos-sequoia-dark
 
-  # stacked or linear
-  style/candidate_list_layout: stacked
-  style/inline_preedit: true
+    font_point: 18
+    label_font_point: 14
+    font_face: "PingFangSC-Light"
+    label_font_face: "PingFangSC-Light"
 
-  # disable chinese input in specific programs
-  # Application_Name: ll /Applications
-  # Bundle_Identifier: osascript -e 'id of app "Application_Name"'
-  app_options/com.apple.finder/ascii_mode: true
-  app_options/com.adobe.Photoshop/ascii_mode: true
-  app_options/com.apple.Terminal/ascii_mode: true
-  app_options/com.googlecode.iterm2/ascii_mode: true
-  app_options/com.google.Chrome/ascii_mode: false
+    candidate_list_layout: stacked
+    inline_preedit: true
 
-  app_options/md.obsidian:
-    ascii_mode: false
-    vim_mode: true
+  # obtain bundle_identifier via:
+  # ll /Applications
+  # osascript -e 'id of app "application_name"'
+  app_options/+:
+    com.apple.finder:
+      ascii_mode: true
+    com.adobe.Photoshop:
+      ascii_mode: true
+    com.apple.Terminal:
+      ascii_mode: true
+    com.googlecode.iterm2:
+      ascii_mode: true
+    com.google.Chrome:
+      ascii_mode: false
+    com.apple.Safari:
+      ascii_mode: false
 
-  app_options/com.sublimetext.4:
-    ascii_mode: false
-    vim_mode: true
+    md.obsidian:
+      ascii_mode: false
+      vim_mode: true
 
-  app_options/com.microsoft.VSCode:
-    ascii_mode: false
-    vim_mode: true
+    com.sublimetext.4:
+      ascii_mode: false
+      vim_mode: true
+
+    com.microsoft.VSCode:
+      ascii_mode: false
+      vim_mode: true
+
+    com.exafunction.windsurf:
+      ascii_mode: false
+      vim_mode: true
+
+    # cursor
+    com.todesktop.230313mzl4w4u92:
+      ascii_mode: false
+      vim_mode: true
