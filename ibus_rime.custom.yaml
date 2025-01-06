@@ -1,3 +1,8 @@
+# rime config folder: ~/.config/ibus/rime
+# rime data: /usr/share/rime-data
+
 patch:
-  style/horizontal: false
-  style/inline_preedit: true
+
+  style/+:
+    horizontal: false
+    inline_preedit: true

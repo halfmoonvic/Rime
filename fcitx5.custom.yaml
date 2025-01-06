@@ -1,23 +1,33 @@
-# ~/.config/fcitx5/conf/classicui.conf
+# rime config folder: ~/.local/share/fcitx5/rime
+# rime data: /usr/share/rime-data
+# theme folder: ~/.local/share/fcitx5/themes
+# list system fonts: fc-list
+# theme config file: ~/.config/fcitx5/conf/classicui.conf
 # fcitx5 style settings
-# Vertical Candidate List=False
+# Vertical Candidate List=True
 # PerScreenDPI=True
-# Font="Microsoft YaHei Mono 14" # fc-list (list system fonts)
-# Theme=spring
+# Font="Microsoft YaHei 14"
+# Theme=macOS-light
 
 patch:
 
   # You may obtain the app name via
   # dbus-send --print-reply=literal --dest=org.fcitx.Fcitx5 /controller org.fcitx.Fcitx.Controller1.DebugInfo
-  app_options/gnome-terminal/ascii_mode: true
-  app_options/gnome-terminal-server/ascii_mode: true
-  app_options/org.gnome.Nautilus/ascii_mode: true
-  app_options/synapse/ascii_mode: true
 
-  app_options/sublime_text:
-    ascii_mode: false
-    vim_mode: true
+  app_options/+:
+    gnome-terminal:
+      ascii_mode: true
+    gnome-terminal-server:
+      ascii_mode: true
+    org.gnome.Nautilus:
+      ascii_mode: true
+    synapse:
+      ascii_mode: true
 
-  app_options/code:
-    ascii_mode: false
-    vim_mode: true
+    sublime_text:
+      ascii_mode: false
+      vim_mode: true
+
+    code:
+      ascii_mode: false
+      vim_mode: true
