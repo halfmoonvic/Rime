@@ -8,7 +8,7 @@ patch_emoji:
   emoji_suggestion:
     opencc_config: emoji.json
     option_name: emoji_suggestion
-    tips: all
+    tips: none
     inherit_comment: false
 
 # https://github.com/BlindingDark/rime-easy-en/blob/master/easy_en.yaml
