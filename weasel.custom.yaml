@@ -52,3 +52,7 @@ patch:
     code.exe:
       ascii_mode: false
       vim_mode: true
+
+    cursor.exe:
+      ascii_mode: false
+      vim_mode: true

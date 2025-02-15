@@ -1,7 +1,6 @@
 # https://github.com/rime/squirrel/wiki/squirrel.yaml-%E9%85%8D%E7%BD%AE%E6%8C%87%E5%8D%97
 
 patch:
-
   preset_color_schemes/+:
     __include: color_schemes:/color_schemes
 
