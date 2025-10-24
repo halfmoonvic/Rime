@@ -1,7 +1,6 @@
 # https://github.com/rime/weasel/wiki/Weasel-%E5%AE%9A%E5%88%B6%E5%8C%96
 
 patch:
-
   preset_color_schemes/+:
     __include: color_schemes:/color_schemes
 
@@ -20,27 +19,22 @@ patch:
     inline_preedit: true
 
   app_options/+:
-    windowsterminal.exe:
-      ascii_mode: true
-    conemu.exe:
-      ascii_mode: true
-    conemu64.exe:
-      ascii_mode: true
-    conemuc64.exe:
-      ascii_mode: true
-    conhost.exe:
-      ascii_mode: true
+    # system
     explorer.exe:
       ascii_mode: true
+
+    windowsterminal.exe:
+      ascii_mode: false
+      vim_mode: true
+
+    conemu64.exe:
+      ascii_mode: true
+      vim_mode: true
+
     launchy.exe:
       ascii_mode: true
-    photoshop.exe:
-      ascii_mode: true
-    winkawaks.exe:
-      ascii_mode: true
-    chrome.exe:
-      ascii_mode: false
 
+    # editors
     obsidian.exe:
       ascii_mode: false
       vim_mode: true
@@ -56,3 +50,13 @@ patch:
     cursor.exe:
       ascii_mode: false
       vim_mode: true
+
+    # utilities
+    photoshop.exe:
+      ascii_mode: true
+
+    winkawaks.exe:
+      ascii_mode: true
+
+    chrome.exe:
+      ascii_mode: false

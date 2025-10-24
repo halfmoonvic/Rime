@@ -10,20 +10,24 @@
 # Theme=macOS-light
 
 patch:
-
   # You may obtain the app name via
   # dbus-send --print-reply=literal --dest=org.fcitx.Fcitx5 /controller org.fcitx.Fcitx.Controller1.DebugInfo
 
   app_options/+:
-    gnome-terminal:
-      ascii_mode: true
-    gnome-terminal-server:
-      ascii_mode: true
+    # system
     org.gnome.Nautilus:
       ascii_mode: true
+
+    gnome-terminal:
+      ascii_mode: true
+
+    gnome-terminal-server:
+      ascii_mode: true
+
     synapse:
       ascii_mode: true
 
+    # editors
     sublime_text:
       ascii_mode: false
       vim_mode: true

@@ -20,19 +20,22 @@ patch:
   # ll /Applications
   # osascript -e 'id of app "application_name"'
   app_options/+:
+    # system
     com.apple.finder:
       ascii_mode: true
-    com.adobe.Photoshop:
-      ascii_mode: true
-    com.apple.Terminal:
-      ascii_mode: true
-    com.googlecode.iterm2:
-      ascii_mode: true
-    com.google.Chrome:
-      ascii_mode: false
+
     com.apple.Safari:
       ascii_mode: false
 
+    com.apple.Terminal:
+      ascii_mode: true
+      vim_mode: true
+
+    com.googlecode.iterm2:
+      ascii_mode: true
+      vim_mode: true
+
+    # editors
     md.obsidian:
       ascii_mode: false
       vim_mode: true
@@ -53,3 +56,10 @@ patch:
     com.todesktop.230313mzl4w4u92:
       ascii_mode: false
       vim_mode: true
+
+    # utilities
+    com.adobe.Photoshop:
+      ascii_mode: true
+
+    com.google.Chrome:
+      ascii_mode: false
