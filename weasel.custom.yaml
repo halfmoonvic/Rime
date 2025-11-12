@@ -28,7 +28,7 @@ patch:
       vim_mode: true
 
     conemu64.exe:
-      ascii_mode: true
+      ascii_mode: false
       vim_mode: true
 
     launchy.exe:

@@ -28,11 +28,11 @@ patch:
       ascii_mode: false
 
     com.apple.Terminal:
-      ascii_mode: true
+      ascii_mode: false
       vim_mode: true
 
     com.googlecode.iterm2:
-      ascii_mode: true
+      ascii_mode: false
       vim_mode: true
 
     # editors
