@@ -26,6 +26,15 @@ patch:
   engine/translators/@93: lua_translator@lunar
   engine/translators/@94: lua_translator@jieqi
   engine/translators/@95: lua_translator@ganzhi
+  engine/processors/@before 0: lua_processor@vim_mode
+
+  # default state
+  switches/+:
+    - name: vmode
+      reset: 0
+    - name: simplification
+      states: ["漢字", "汉字"]
+      reset: 0
 
   # paging_with_minus_equal conflicts with long sounds in katakana
   key_binder/bindings:
@@ -34,6 +43,3 @@ patch:
       - key_bindings:/move_by_word_with_tab
       - key_bindings:/paging_with_comma_period
       - key_bindings:/numbered_mode_switch
-
-  # default 漢字　
-  switches/@2/reset: 0

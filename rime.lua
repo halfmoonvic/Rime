@@ -9,4 +9,7 @@ lunar = require("lunar")
 jieqi = require("jieqi")
 ganzhi = require("ganzhi")
 
+-- https://github.com/lei4519/rime-ice/blob/main/lua/vim_mode.lua
+vim_mode = require("vim_mode")
+
 time = require("time")

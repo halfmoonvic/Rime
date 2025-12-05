@@ -20,6 +20,15 @@ patch:
   engine/translators/@93: lua_translator@lunar
   engine/translators/@94: lua_translator@jieqi
   engine/translators/@95: lua_translator@ganzhi
+  engine/processors/@before 0: lua_processor@vim_mode
+
+  # default state
+  switches/+:
+    - name: vmode
+      reset: 0
+    - name: simplification
+      states: ["漢字", "汉字"]
+      reset: 1
 
   # 五笔回车清屏和分号、引号上屏幕二三候选词
   key_binder:

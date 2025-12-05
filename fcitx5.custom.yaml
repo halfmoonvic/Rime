@@ -19,19 +19,29 @@ patch:
       ascii_mode: true
 
     gnome-terminal:
-      ascii_mode: true
+      ascii_mode: false
+      vmode: true
 
     gnome-terminal-server:
-      ascii_mode: true
+      ascii_mode: false
+      vmode: true
 
     synapse:
       ascii_mode: true
 
     # editors
+    obsidian:
+      ascii_mode: false
+      vmode: true
+
     sublime_text:
       ascii_mode: false
-      vim_mode: true
+      vmode: true
 
     code:
       ascii_mode: false
-      vim_mode: true
+      vmode: true
+
+    cursor:
+      ascii_mode: false
+      vmode: true

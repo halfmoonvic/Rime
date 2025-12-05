@@ -23,13 +23,19 @@ patch:
   engine/translators/@93: lua_translator@lunar
   engine/translators/@94: lua_translator@jieqi
   engine/translators/@95: lua_translator@ganzhi
+  engine/processors/@before 0: lua_processor@vim_mode
+
+  # default state
+  switches/+:
+    - name: vmode
+      reset: 0
+    - name: simplification
+      states: ["漢字", "汉字"]
+      reset: 1
 
   # load luna_pinyin dict
   translator/dictionary: luna_pinyin.extended
   speller/algebra/@before 0: xform/^([a-z])$/$1_/
-
-  # default 汉字
-  switches/@2/reset: 1
 
   # https://gist.github.com/lotem/2320943
   # 【朙月拼音】模糊音定製模板
