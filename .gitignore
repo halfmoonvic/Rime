@@ -3,6 +3,9 @@
 
 /.vscode
 /.fleet
+/*claude*
+/*agents*
+
 
 /sync
 /*.userdb
