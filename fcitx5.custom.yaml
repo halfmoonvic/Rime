@@ -9,9 +9,13 @@
 # Font="Microsoft YaHei 14"
 # Theme=macOS-light
 
+# -- IMPORTANT: Set fcitx5-configtool "Shared Input State" to "No" (Global Options).
+# -- Otherwise app_options won't re-apply when switching apps (shared session).
+
+# You may obtain the app name via
+# dbus-send --print-reply=literal --dest=org.fcitx.Fcitx5 /controller org.fcitx.Fcitx.Controller1.DebugInfo
+
 patch:
-  # You may obtain the app name via
-  # dbus-send --print-reply=literal --dest=org.fcitx.Fcitx5 /controller org.fcitx.Fcitx.Controller1.DebugInfo
 
   app_options/+:
     # system
