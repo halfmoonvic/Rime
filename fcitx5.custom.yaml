@@ -1,13 +1,6 @@
 # rime config folder: ~/.local/share/fcitx5/rime
 # rime data: /usr/share/rime-data
 # theme folder: ~/.local/share/fcitx5/themes
-# list system fonts: fc-list
-# theme config file: ~/.config/fcitx5/conf/classicui.conf
-# fcitx5 style settings
-# Vertical Candidate List=True
-# PerScreenDPI=True
-# Font="Microsoft YaHei 14"
-# Theme=macOS-light
 
 # -- IMPORTANT: Set fcitx5-configtool "Shared Input State" to "No" (Global Options).
 # -- Otherwise app_options won't re-apply when switching apps (shared session).
