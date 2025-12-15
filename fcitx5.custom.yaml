@@ -15,11 +15,11 @@ patch:
     org.gnome.Nautilus:
       ascii_mode: true
 
-    gnome-terminal:
+    gnome-terminal-server:
       ascii_mode: false
       vmode: true
 
-    gnome-terminal-server:
+    alacritty:
       ascii_mode: false
       vmode: true
 
