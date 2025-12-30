@@ -24,11 +24,15 @@ patch:
       ascii_mode: true
 
     windowsterminal.exe:
-      ascii_mode: false
+      ascii_mode: true
+      vim_mode: true
+
+    alacritty.exe:
+      ascii_mode: true
       vim_mode: true
 
     conemu64.exe:
-      ascii_mode: false
+      ascii_mode: true
       vim_mode: true
 
     launchy.exe:

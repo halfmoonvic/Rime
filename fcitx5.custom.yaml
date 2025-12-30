@@ -16,11 +16,11 @@ patch:
       ascii_mode: true
 
     gnome-terminal-server:
-      ascii_mode: false
+      ascii_mode: true
       vmode: true
 
     alacritty:
-      ascii_mode: false
+      ascii_mode: true
       vmode: true
 
     synapse:

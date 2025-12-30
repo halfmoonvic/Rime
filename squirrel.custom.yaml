@@ -28,11 +28,19 @@ patch:
       ascii_mode: false
 
     com.apple.Terminal:
-      ascii_mode: false
+      ascii_mode: true
       vim_mode: true
 
     com.googlecode.iterm2:
-      ascii_mode: false
+      ascii_mode: true
+      vim_mode: true
+
+    org.alacritty:
+      ascii_mode: true
+      vim_mode: true
+
+    com.mitchellh.ghostty:
+      ascii_mode: true
       vim_mode: true
 
     # editors
