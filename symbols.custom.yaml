@@ -1,21 +1,16 @@
-symbols:
+symbol_customize:
   "/wz":
     [
       "site:zhihu.com",
       "site:github.com",
       "site:v2ex.com",
       "site:movie.douban.com",
-      "site:tieba.baidu.com",
-      "site:wikipedia.org",
-      "site:developer.mozilla.org",
-      "-zhuanlan site:zhihu.com",
-      "site:daily.zhihu.com",
     ]
   "/zz": ["→_→", "←_←"]
 
 patch:
   punctuator/full_shape:
-    __include: symbols
+    __include: symbol_customize
 
     " ": { commit: " " }
     "!": { commit: "！" }
@@ -52,7 +47,7 @@ patch:
     "~": "～"
 
   punctuator/half_shape:
-    __include: symbols
+    __include: symbol_customize
 
     " ": { commit: " " }
     "!": { commit: "！" }
