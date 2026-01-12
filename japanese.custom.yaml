@@ -6,13 +6,14 @@ patch:
   __include: reverse_lookup:/patch_luna_pinyin2
 
   # import punctuator and special symbols
-  punctuator/import_preset: symbols
+  punctuator/+:
+    import_preset: symbols
+    full_shape:
+      " ": { commit: "　" }
+    half_shape:
+      " ": { commit: "　" }
 
-  punctuator/full_shape:
-    " ": { commit: "　" }
-
-  punctuator/half_shape:
-    " ": { commit: "　" }
+  translator/dictionary: japanese.extended
 
   # recognize symbols
   recognizer/patterns/punct: "^/([0-9]0?|[A-Za-z]+)$"

@@ -3,7 +3,7 @@
 
 ---
 name: luna_pinyin.extended
-version: "2014.09.07"
+version: "1.0"
 sort: by_weight
 use_preset_vocabulary: true
 
