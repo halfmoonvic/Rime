@@ -33,7 +33,7 @@ https://github.com/halfmoonvic/Rime/tree/master/doc
    - windows weasel: `%APPDATA%\Rime`
    - mac squirrel: `~/library/rime`
    - ibus: `~/.config/ibus/rime`
-   - fcitx5: `~/.config/fcitx5/rime`
+   - fcitx5: `~/.local/share/fcitx5/rime`
 
 2. clone 或者下载本仓库文件至以上对应的「用户文件夹」。
 
