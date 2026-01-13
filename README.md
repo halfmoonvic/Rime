@@ -2,9 +2,9 @@
 
 ![features](./assets/features.jpg)
 
-## 文档教程
-
-https://github.com/halfmoonvic/Rime/tree/master/doc
+## 文档
+- [设置教程](https://github.com/halfmoonvic/Rime/tree/master/doc)
+- [ubuntu install rime](https://github.com/halfmoonvic/Rime/blob/master/doc/ubuntu_install_rime/ubuntu_install_rime.md)
 
 ## 基本功能
 
