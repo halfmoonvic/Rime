@@ -9,7 +9,6 @@
 # dbus-send --print-reply=literal --dest=org.fcitx.Fcitx5 /controller org.fcitx.Fcitx.Controller1.DebugInfo
 
 patch:
-
   app_options/+:
     # system
     org.gnome.Nautilus:
@@ -40,5 +39,9 @@ patch:
       vmode: true
 
     cursor:
+      ascii_mode: false
+      vmode: true
+
+    antigravity:
       ascii_mode: false
       vmode: true

@@ -56,6 +56,10 @@ patch:
       ascii_mode: false
       vim_mode: true
 
+    com.google.antigravity:
+      ascii_mode: false
+      vim_mode: true
+
     com.exafunction.windsurf:
       ascii_mode: false
       vim_mode: true

@@ -55,6 +55,10 @@ patch:
       ascii_mode: false
       vim_mode: true
 
+    antigravity.exe:
+      ascii_mode: false
+      vim_mode: true
+
     # utilities
     photoshop.exe:
       ascii_mode: true
