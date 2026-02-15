@@ -104,7 +104,7 @@ patch_japanese:
 
   _japanese_lookup:
     tag: _japanese_lookup
-    dictionary: japanese
+    dictionary: japanese.extended
     prefix: "`j"
     suffix: "'"
     tips: 〔japanese〕
