@@ -46,16 +46,16 @@ local function translator(input, seg)
     local fullTime = date .. " " .. time .. " " .. week
     fullTime = jq ~= "" and fullTime .. " " .. jq or fullTime
 
-    yield(Candidate("time", seg.start, seg._end, time, ""))
-    yield(Candidate("time", seg.start, seg._end, fullTime, ""))
+    yield(PriorityCandidate("time", seg.start, seg._end, time, ""))
+    yield(PriorityCandidate("time", seg.start, seg._end, fullTime, ""))
   end
 
   if (input == "date") then
-    yield(Candidate("date", seg.start, seg._end, date, jq))
+    yield(PriorityCandidate("date", seg.start, seg._end, date, jq))
   end
 
   if (input == "week") then
-    yield(Candidate("week", seg.start, seg._end, week, ""))
+    yield(PriorityCandidate("week", seg.start, seg._end, week, ""))
   end
 end
 

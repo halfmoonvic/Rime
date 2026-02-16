@@ -1,3 +1,9 @@
+function PriorityCandidate(type, start, _end, text, comment, quality)
+    local cand = Candidate(type, start, _end, text, comment)
+    cand.quality = quality or 999
+    return cand
+end
+
 -- https://github.com/hchunhui/librime-lua/blob/master/sample/lua/number.lua
 number = require("number")
 

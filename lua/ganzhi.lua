@@ -247,7 +247,7 @@ end
 
 function translator(input, seg)
   if (input == "ganzhi" or input == "gz") then
-    yield(Candidate("ganzhi", seg.start, seg._end, lunarJzl(os.date("%Y%m%d%H")), "〔干支〕"))
+    yield(PriorityCandidate("ganzhi", seg.start, seg._end, lunarJzl(os.date("%Y%m%d%H")), "〔干支〕"))
   end
 end
 

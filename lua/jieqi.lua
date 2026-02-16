@@ -938,7 +938,7 @@ end
 function genJieqi(date, seg)
   local jqs = GetNowTimeJq(date)
   for i = 1, #jqs do
-    yield(Candidate("jieqi", seg.start, seg._end, jqs[i], "〔节气〕"))
+    yield(PriorityCandidate("jieqi", seg.start, seg._end, jqs[i], "〔节气〕"))
   end
   jqs = nil
 end
