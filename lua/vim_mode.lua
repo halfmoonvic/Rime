@@ -17,6 +17,10 @@ local function vim_mode(key, env)
   -- linux hyprland
   -- os.execute("notify-send '" .. vmode .. "'")
 
+  -- local msg = "keycode: " .. tostring(key.keycode) .. " repr: " .. tostring(key:repr()) .. " vmode: " .. tostring(vmode)
+  -- msg = (msg:gsub('"', '\\"'))
+  -- os.execute('notify-send "vim_mode ' .. msg .. '"')
+
   -- 只有在 app_options 中配置了 vmode 才会进入切换模式
   if vmode then
     -- 当前是否处于英文模式

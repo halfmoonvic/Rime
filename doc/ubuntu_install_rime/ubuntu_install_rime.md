@@ -42,13 +42,12 @@ sudo apt install ibus-rime
 Tell different kinds of applications that their input method provider is ibus
 
 ```
-vim ~/.xprofile
+vim ~/.config/environment.d/ibus.conf
 
-export GTK_IM_MODULE=ibus
-export QT_IM_MODULE=ibus
-export XMODIFIERS=@im=ibus
-
-export SDL_IM_MODULE=ibus
+GTK_IM_MODULE=ibus
+QT_IM_MODULE=ibus
+XMODIFIERS=@im=ibus
+SDL_IM_MODULE=ibus
 ```
 
 ## 1.3 im-config
@@ -100,13 +99,12 @@ sudo apt install fcitx5-rime
 Tell different kinds of applications that their input method provider is the fcitx family
 
 ```
-vim ~/.xprofile
+vim ~/.config/environment.d/fcitx.conf
 
-export GTK_IM_MODULE=fcitx
-export QT_IM_MODULE=fcitx
-export XMODIFIERS=@im=fcitx
-
-export SDL_IM_MODULE=fcitx
+GTK_IM_MODULE=fcitx
+QT_IM_MODULE=fcitx
+XMODIFIERS=@im=fcitx
+SDL_IM_MODULE=fcitx
 ```
 
 ## 2.3 im-config
