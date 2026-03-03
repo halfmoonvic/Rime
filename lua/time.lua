@@ -26,8 +26,8 @@ translator 的输出是若干候选项。
 require("jieqi")
 
 local function translator(input, seg)
-  if (not (input == "time" or input == "shijian" or
-      input == "sj" or input == "date" or input == "week")) then
+  if (not (input == "time" or input == "sj" or
+        input == "date" or input == "week")) then
     return
   end
 
@@ -42,7 +42,7 @@ local function translator(input, seg)
 
   local date = os.date("%Y-%m-%d")
 
-  if (input == "time" or input == "shijian" or input == "sj") then
+  if (input == "time" or input == "sj") then
     local fullTime = date .. " " .. time .. " " .. week
     fullTime = jq ~= "" and fullTime .. " " .. jq or fullTime
 
