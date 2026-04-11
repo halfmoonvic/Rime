@@ -22,7 +22,7 @@ patch:
       ascii_mode: false
       vmode: true
 
-    synapse:
+    quickshell:
       ascii_mode: true
 
     # editors
