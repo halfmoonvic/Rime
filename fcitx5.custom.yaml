@@ -34,6 +34,10 @@ patch:
       ascii_mode: false
       vmode: true
 
+    dev.zed.Zed:
+      ascii_mode: false
+      vmode: true
+
     code:
       ascii_mode: false
       vmode: true

@@ -47,6 +47,10 @@ patch:
       ascii_mode: false
       vim_mode: true
 
+    zed.exe:
+      ascii_mode: false
+      vim_mode: true
+
     code.exe:
       ascii_mode: false
       vim_mode: true
