@@ -35,6 +35,7 @@ patch:
 
   # load luna_pinyin dict
   translator/dictionary: luna_pinyin.extended
+  custom_phrase/user_dict: dict/custom_phrase
   speller/algebra/@before 0: xform/^([a-z])$/$1_/
 
   # https://gist.github.com/lotem/2320943

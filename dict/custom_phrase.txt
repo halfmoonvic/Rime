@@ -1,0 +1,4 @@
+# Rime custom phrases
+# encoding: utf-8
+
+什么	sm	1000000000
