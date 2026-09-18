@@ -6,6 +6,9 @@ patch:
   # import shortcut key
   key_binder/import_preset: default
 
+  # import punctuator and special symbols
+  punctuator/import_preset: symbols
+
   # lua
   engine/translators/@90: lua_translator@thousand
   engine/translators/@91: lua_translator@number
@@ -15,6 +18,7 @@ patch:
   engine/translators/@95: lua_translator@ganzhi
   engine/processors/@before 0: lua_processor@vim_mode
 
+  # default state
   switches:
     - name: vmode
       reset: 0
