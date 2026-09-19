@@ -2,6 +2,7 @@ patch:
   # input schema repository, https://github.com/rime/plum
   schema_list:
     - schema: luna_pinyin
+    - schema: double_pinyin_flypy
     - schema: wubi86
     - schema: japanese
     - schema: easy_en
