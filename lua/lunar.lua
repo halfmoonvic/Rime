@@ -395,7 +395,7 @@ end
 -- print(os.date("%Y%m%d") .. "-" .. Date2LunarDate(os.date("%Y%m%d")))
 
 local function translator(input, seg)
-  if (input == "lunar" or input == "nongli" or input == "nl") then
+  if (input == "/lunar" or input == "/nongli" or input == "/nl") then
     date = Date2LunarDate(os.date("%Y%m%d"))
     yield(PriorityCandidate("lunar", seg.start, seg._end, date, "〔农历〕"))
   end

@@ -11,14 +11,15 @@
 - 拼音、五笔、日本语
 - 中英混输
 - kaomoji 颜文字表情
-- symbol 特殊符号（`/` + 字母）
 - 全平台 `vim_mode` 模式（Linux 平台通过 lua 脚本实现）
-- 数字千分位、大写数字（`/` + 数字）
-- 时间（`time`、`shijian`、`sj`、`date`、`week`）
-- 节气（`jq`、`jieqi`）
-- 农历（`lunar`、`nongli`、`nl`）
 - 反查中文（`p）
 - 反查日语（`j）
+- symbol 特殊符号（`/jt`）
+- 数字千分位、大写数字（`/123321`）
+- 时间（`/time`、`/sj`、`/date`、`/week`）
+- 节气（`/jq` 今年余下、`/jieqi` 今年全部）
+- 农历（`/lunar`、`/nongli`、`/nl`）
+- 干支（`/ganzhi`、`/gz`）
 
 ## 输入法、词库
 

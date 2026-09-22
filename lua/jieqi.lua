@@ -945,11 +945,11 @@ end
 
 function jieqi_translator(input, seg)
   --列出当年所有的节气
-  if (input == "jieqi") then
+  if (input == "/jieqi") then
     genJieqi(os.date("%Y0101"), seg)
   end
   --列出当年余下的节气
-  if (input == "jq") then
+  if (input == "/jq") then
     genJieqi(os.date("%Y%m%d"), seg)
   end
 end
