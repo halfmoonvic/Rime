@@ -246,7 +246,7 @@ end
 -- print(lunarJzl(os.date("%Y%m%d%H")))
 
 function translator(input, seg)
-  if (input == "ganzhi" or input == "gz") then
+  if (input == "/ganzhi" or input == "/gz") then
     yield(PriorityCandidate("ganzhi", seg.start, seg._end, lunarJzl(os.date("%Y%m%d%H")), "〔干支〕"))
   end
 end
