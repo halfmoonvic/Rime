@@ -1,0 +1,48 @@
+patch:
+  __include: reverse_lookup:/patch_emoji
+  __include: reverse_lookup:/patch_easy_en
+  __include: reverse_lookup:/patch_japanese
+
+  # import shortcut key
+  key_binder/import_preset: default
+
+  # import punctuator and special symbols
+  punctuator/import_preset: symbols
+
+  # recognize symbols
+  recognizer/patterns/punct: "^/([0-9]0?|[A-Za-z]+)$"
+  # recognize number.lua
+  recognizer/patterns/number: "^/[0-9]+$"
+
+  # lua
+  engine/translators/@90: lua_translator@thousand
+  engine/translators/@91: lua_translator@number
+  engine/translators/@92: lua_translator@time
+  engine/translators/@93: lua_translator@lunar
+  engine/translators/@94: lua_translator@jieqi
+  engine/translators/@95: lua_translator@ganzhi
+  engine/processors/@before 0: lua_processor@vim_mode
+
+  # default state
+  switches:
+    - name: vmode
+      reset: 0
+    - name: simplification
+      states: ["漢字", "汉字"]
+      reset: 1
+
+  translator/preedit_format: []
+
+  # load luna_pinyin dict
+  translator/dictionary: luna_pinyin.extended
+  speller/algebra/@before 0: xform/^([a-z])$/$1_/
+
+  # enable a custom phrase dictionary for Xiaohe Double Pinyin.
+  engine/translators/@before 1: table_translator@custom_phrase
+  custom_phrase:
+    dictionary: ""
+    user_dict: dict/custom_phrase_flypy
+    db_class: stabledb
+    enable_completion: false
+    enable_sentence: false
+    initial_quality: 1
