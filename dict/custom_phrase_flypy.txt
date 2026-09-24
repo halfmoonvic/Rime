@@ -1,0 +1,4 @@
+# Rime custom phrases for Xiaohe Double Pinyin
+# encoding: utf-8
+
+git	git	1000000000

@@ -35,5 +35,14 @@ patch:
 
   # load luna_pinyin dict
   translator/dictionary: luna_pinyin.extended
-  custom_phrase/user_dict: dict/custom_phrase
   speller/algebra/@before 0: xform/^([a-z])$/$1_/
+
+  # enable a custom phrase dictionary for Xiaohe Double Pinyin.
+  engine/translators/@before 1: table_translator@custom_phrase
+  custom_phrase:
+    dictionary: ""
+    user_dict: dict/custom_phrase_flypy
+    db_class: stabledb
+    enable_completion: false
+    enable_sentence: false
+    initial_quality: 1
