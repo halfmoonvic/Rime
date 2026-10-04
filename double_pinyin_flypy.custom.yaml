@@ -31,13 +31,14 @@ patch:
       states: ["漢字", "汉字"]
       reset: 1
 
+  # show raw keystrokes in preedit instead of converting them to full pinyin
   translator/preedit_format: []
 
   # load luna_pinyin dict
   translator/dictionary: luna_pinyin.extended
   speller/algebra/@before 0: xform/^([a-z])$/$1_/
 
-  # enable a custom phrase dictionary for Xiaohe Double Pinyin.
+  # enable a custom phrase dictionary
   engine/translators/@before 1: table_translator@custom_phrase
   custom_phrase:
     dictionary: ""
