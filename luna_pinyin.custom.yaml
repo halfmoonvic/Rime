@@ -124,70 +124,88 @@ patch:
     - derive/ao$/oa/                   # hoa => hao
     - derive/([iu])a(o|ng?)$/a$1$2/    # tain => tian
 
-    ############# a | e #############
-    # a. → .a
-    # ab => ba、 al => la、 am => ma | abn => ban、 alng => lang
+    # ------------------------------
+    # a | e
+    # ------------------------------
+
+    # --- a. → .a ---
+    # ab → ba、 al → la、 am → ma | abn → ban、 alng → lang
     - derive/^([bklm])a/a$1/
-    # hau => hua
+    # hau → hua
     # - derive/(?!^)([u])a/a$1/
 
-    # .a → a.
-    # qina => qian、 huna => huan
+    # --- .a → a. ---
+    # qina → qian、 huna → huan
     - derive/(?!^)a([n])/$1a/
 
-    # e. → .e
-    # el => le、 em => me | ezn => zen | elng => leng
+    # --- e. → .e ---
+    # el → le、 em → me | ezn → zen | elng → leng
     - derive/^([bfklmrwyz])e(.*)$/e$1$2/
 
-    # .e → e.
-    # fie => fei、 gie => gei、 kie => kei、 wie => wei、 zie => zei
-    # fne => fen、 gne => gen、 kne => ken、 wne => wen、 zne => zen
+    # --- .e → e. ---
+    # fie → fei、 gie → gei、 kie → kei、 wie → wei、 zie → zei
+    # fne → fen、 gne → gen、 kne → ken、 wne → wen、 zne → zen
     - derive/^([fgkwz])e([i])$/$1$2e/
     - derive/^([bfgkrwz])e([n])$/$1$2e/
 
-    ############### i ###############
-    # .ia → .ai
-    # kuia => kuai、 bia => bai、 cia => cai、 hia => hai
+    # ------------------------------
+    # i
+    # ------------------------------
+
+    # --- .ia → .ai ---
+    # kuia → kuai、 bia → bai、 cia → cai、 hia → hai
     - derive/^(ku|ch|[bchgkmstwz])([a])i$/$1i$2/
 
-    # .ai → .ia | .ei → .ie
-    # jai => jia、 jei => jie、 xai => xia、 xei => xie
+    # --- .ai → .ia | .ei → .ie ---
+    # jai → jia、 jei → jie、 xai → xia、 xei → xie
     - derive/^([jqx])i([ae])$/$1$2i/
 
-    # e.i → .ie | .ai → .ia
-    # eji => jie、 eqi => qie、 exi => xie
+    # --- e.i → .ie | .ai → .ia ---
+    # eji → jie、 eqi → qie、 exi → xie
     - derive/^([jqx])i([ae])$/$2$1i/
 
-    # ^i.h$ → ^h.i$
-    # ia → ai、 iuh => hui、 iah => hai、 ieh => hei
+    # --- ^i.h$ → ^h.i$ ---
+    # ia → ai、 iuh → hui、 iah → hai、 ieh → hei
     - derive/^(h?)([aeqtux])i/i$2$1/
 
-    ############### o ###############
-    # o. → .o
-    # otng => tong、 ozu => zou
+    # ------------------------------
+    # o
+    # ------------------------------
+
+    # --- o. → .o ---
+    # otng → tong、 ozu → zou
     - derive/^([dgtz])([o])/$2$1/
 
-    ############### ng ###############
-    # .gn → .ng | n.g → .ng
-    # dagn  => dang
+    # ------------------------------
+    # ng
+    # ------------------------------
+
+    # --- .gn → .ng | n.g → .ng ---
+    # dagn → dang
     - derive/(?!^)([aeiou])ng$/$1gn/
     - derive/(?!^)([aeiou])ng$/n$1g/
 
-    ############### h ###############
-    # h. → .h
-    # hseng => sheng
+    # ------------------------------
+    # h
+    # ------------------------------
+
+    # --- h. → .h ---
+    # hseng → sheng
     - derive/^([cesz])h(?!$)/h$1/
 
-    # .h → h.
-    # eh => he、 ehn => hen | sah => sha、 zeh => zhe
+    # --- .h → h. ---
+    # eh → he、 ehn → hen | sah → sha、 zeh → zhe
     # - derive/^([csz]?)h([aeu])/$1$2h/
     - derive/^([csz]?)h([aeu])/$1$2h/
 
-    ############### u ###############
-    # u. → .u
-    # uz => zu、 uxn => xun
+    # ------------------------------
+    # u
+    # ------------------------------
+
+    # --- u. → .u ---
+    # uz → zu、 uxn → xun
     - derive/^([dgqtxz])u/u$1/
 
-    # .u → u.
-    # jeu => jue、 xnu => xun、 xeu => xue、 ynu => yun、 yeu => yue
+    # --- .u → u. ---
+    # jeu → jue、 xnu → xun、 xeu → xue、 ynu → yun、 yeu → yue
     - derive/(?!^)u([aen])/$1$2u/
