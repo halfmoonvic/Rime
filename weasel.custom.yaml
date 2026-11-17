@@ -23,6 +23,9 @@ patch:
     explorer.exe:
       ascii_mode: true
 
+    dopus.exe:
+      ascii_mode: true
+
     windowsterminal.exe:
       ascii_mode: false
       vim_mode: true
